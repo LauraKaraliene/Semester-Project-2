@@ -1,0 +1,12 @@
+.carousel-item {
+    display: flex;
+    align-items: center;
+  }
+  .carousel-item .text-wrapper {
+    flex: 0 0 40%; /* 40% width */
+    padding: 20px;
+  }
+  .carousel-item img {
+    flex: 0 0 60%; /* 60% width */
+    object-fit: cover;
+  }
