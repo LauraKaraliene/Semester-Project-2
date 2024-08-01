@@ -11856,4 +11856,9 @@ textarea.form-control-lg {
   border-color: rgba(115, 95, 44, 0.3);
 }
 
+.about-page-intro {
+  height: 70vh; /* Adjust this value as needed */
+  overflow: auto;
+}
+
 /*# sourceMappingURL=styles.css.map */
