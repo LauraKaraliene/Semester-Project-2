@@ -1,116 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home | BidNest</title>
     <link rel="stylesheet" href="/dist/css/styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-
-<body class="d-flex flex-column vh-100">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="d-flex flex-column vh-100">
     <header class="bg-info">
-        <section class="p-1"> 
-            <div> 
-              <ul class="nav justify-content-end align-items-center"> 
-                <li class="nav-item"> 
-                  <a class="nav-link text-dark" href="#">Register</a> 
-                </li> 
-                <li class="nav-item"> 
-                  <a class="nav-link text-dark" href="index.html">Login</a> 
-                </li> 
-                
-              <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="border-0"><img src="images/user.png" alt="Profile" height="30" width="30" class="rounded-circle"></button>
-
-              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                  <button type="button" class="btn-close m-2 display-flex align-self-end" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                <div class="offcanvas-body d-flex flex-column">
-                   <!-- User Info Card -->
-                  <div class="card border-0 mt-2 mb-3" style="width: 16rem;">
-                    <img src="images/user.png" class="card-img-top border rounded-circle border-primary w-50"  alt="user image">
-                    <div class="card-body">
-                      <h5 class="card-title mb-3 mt-2 fw-bold">UserName</h5>
-                      <p class="card-text">username@stud.noroff.no</p>
-                      <p>1000 credits</p>
-                      <a href="#" class="btn background-color-light border-primary mb-2 text-primary w-100">Edit profile</a>
-                      <a href="#" class="btn btn-primary w-100">+ New Listing</a>
+      <section class="p-1">
+        <div>
+          <ul class="nav justify-content-end align-items-center">
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="index.html">Login</a>
+            </li>
+            <button
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight"
+              class="border-0"
+            >
+              <img
+                src="images/user.png"
+                alt="Profile"
+                height="30"
+                width="30"
+                class="rounded-circle"
+              />
+            </button>
+            <div
+              class="offcanvas offcanvas-end"
+              tabindex="-1"
+              id="offcanvasRight"
+              aria-labelledby="offcanvasRightLabel"
+            >
+              <button
+                type="button"
+                class="btn-close m-2 display-flex align-self-end"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+              <div class="offcanvas-body d-flex flex-column">
+                <!-- User Info Card -->
+                <div class="card border-0 mt-2 mb-3" style="width: 16rem">
+                  <img
+                    src="images/user.png"
+                    class="card-img-top border rounded-circle border-primary w-50"
+                    alt="user image"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title mb-3 mt-2 fw-bold">UserName</h5>
+                    <p class="card-text">username@stud.noroff.no</p>
+                    <p>1000 credits</p>
+                    <a
+                      href="#"
+                      class="btn background-color-light border-primary mb-2 text-primary w-100"
+                      >Edit profile</a
+                    >
+                    <a href="#" class="btn btn-primary w-100">+ New Listing</a>
+                  </div>
+                </div>
+                <!-- Additional Container -->
+                <div
+                  class="container-fluid d-flex flex-column flex-grow-1 bg-info"
+                >
+                  <div class="row flex-grow-1 mb-3">
+                    <div
+                      class="col-12 d-flex flex-column justify-content-center"
+                    >
+                      <h6 class="fw-bold">All Auctions</h6>
+                      <p class="text-muted cursor-default fs-6">
+                        Currently, there are no auctions.
+                      </p>
                     </div>
                   </div>
-
-                   <!-- Additional Container -->
-                  <div class="container-fluid d-flex flex-column flex-grow-1 bg-info">
-                    <div class="row flex-grow-1 mb-3">
-                      <div class="col-12 d-flex flex-column justify-content-center">
-                        <h6 class="fw-bold">All Auctions</h6>
-                        <p class="text-muted cursor-default fs-6">Currently, there are no auctions.</p>
-                      </div>
+                  <div class="row flex-grow-1 mb-3">
+                    <div
+                      class="col-12 d-flex flex-column justify-content-center"
+                    >
+                      <h6 class="fw-bold">All Wins</h6>
+                      <p class="text-muted cursor-default fs-6">
+                        You haven't won any auctions yet.
+                      </p>
                     </div>
-                    <div class="row flex-grow-1 mb-3">
-                      <div class="col-12 d-flex flex-column justify-content-center">
-                        <h6 class="fw-bold">All Wins</h6>
-                        <p class="text-muted cursor-default fs-6">You haven't won any auctions yet.</p>
-                      </div>
-                    </div>
-                    <div class="row flex-grow-1 mb-3">
-                      <div class="col-12 d-flex flex-column justify-content-center">
-                        <h6 class="fw-bold">Bid History</h6>
-                        <p class="text-muted cursor-default fs-6">Your bid history is empty.</p>
-                      </div>
+                  </div>
+                  <div class="row flex-grow-1 mb-3">
+                    <div
+                      class="col-12 d-flex flex-column justify-content-center"
+                    >
+                      <h6 class="fw-bold">Bid History</h6>
+                      <p class="text-muted cursor-default fs-6">
+                        Your bid history is empty.
+                      </p>
                     </div>
                   </div>
                 </div>
-
               </div>
-              </ul> 
-            </div> 
-        </section> 
+            </div>
+          </ul>
+        </div>
+      </section>
     </header>
-
     <nav class="navbar navbar-expand-lg p-2">
-        <div class="container-fluid">
-            <a class="navbar-brand me-5" href="#">
-                <img src="images/logo.png" alt="Logo" height="50">
-              </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item pe-3">
-                <a class="nav-link active text-dark" aria-current="page" href="#">Browse</a>
-              </li>
-              <li class="nav-item pe-3">
-                <a class="nav-link text-dark" href="#">Sell</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-dark">Contact</a>
-              </li>
-            </ul>
-
-            <form class="d-flex" role="search">
-              <input class="form-control border-primary-light" type="search" placeholder="" aria-label="Search">
-              <button class="btn btn-outline-primary" type="submit">
-                <i class="fas fa-search"></i>
-              </button>
-            </form>
-          </div>
+      <div class="container-fluid">
+        <a class="navbar-brand me-5" href="#">
+          <img src="images/logo.png" alt="Logo" height="50" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item pe-3">
+              <a class="nav-link active text-dark" aria-current="page" href="#"
+                >Browse</a
+              >
+            </li>
+            <li class="nav-item pe-3">
+              <a class="nav-link text-dark" href="#">Sell</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="/about/">About</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control border-primary-light"
+              type="search"
+              placeholder=""
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-primary" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
         </div>
-      </nav>
-
-      <main>
-       
-      </main>
-
-
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-      <script src="/js/script.js" type="module"></script>
-      <main class="flex-grow-1">
-
-      </main>
-      <footer class="py-4 border-1 border-top border-primary sticky-footer">
-        <div class="container text-center">
-          <p class="text-muted mb-0">© 2024 BidNest | Built by Laura Karaliene</p>
-        </div>
-      </footer>
-</body>
+      </div>
+    </nav>
+    <main class="flex-grow-1"></main>
+    <footer class="py-4 border-1 border-top border-primary sticky-footer">
+      <div class="container text-center">
+        <p class="text-muted mb-0">© 2024 BidNest | Built by Laura Karaliene</p >
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/script.js" type="module"></script>
+  </body>
 </html>
