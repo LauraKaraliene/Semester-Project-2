@@ -1,3 +1,5 @@
+import { registerFormHandler } from './handlers/authorization/registerFormHandler.js'
+
 function route() {
   const path = window.location.pathname
   console.log(path)
@@ -9,7 +11,7 @@ function route() {
       break
     case '/register/':
     case '/register/index.html':
-      // do something
+      registerFormHandler()
       break
     case '/login/':
     case '/login/index.html':
