@@ -1,4 +1,5 @@
-export const apiKey = "";
+export const apiKey = "7d823f4f-78cf-45e1-90f5-c86f5cf518c1";
+
 import { get } from "../../utils/storage/get.js";
 import { apiKeyUrl } from "../../constants/api.js";
 

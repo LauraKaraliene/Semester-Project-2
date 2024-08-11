@@ -1,36 +1,37 @@
-import { registerFormHandler } from './handlers/authorization/registerFormHandler.js'
+import { loginFormHandler } from "./handlers/authorization/loginFormHandler.js";
+import { registerFormHandler } from "./handlers/authorization/registerFormHandler.js";
 
 function route() {
-  const path = window.location.pathname
-  console.log(path)
+  const path = window.location.pathname;
+  console.log(path);
 
   switch (path) {
-    case '/':
-    case '/index.html':
+    case "/":
+    case "/index.html":
       // do something
-      break
-    case '/register/':
-    case '/register/index.html':
-      registerFormHandler()
-      break
-    case '/login/':
-    case '/login/index.html':
+      break;
+    case "/register/":
+    case "/register/index.html":
+      registerFormHandler();
+      break;
+    case "/login/":
+    case "/login/index.html":
+      loginFormHandler();
+      break;
+    case "/profile/":
+    case "/profile/index.html":
       // do something
-      break
-    case '/profile/':
-    case '/profile/index.html':
+      break;
+    case "/about/":
+    case "/about/index.html":
       // do something
-      break
-    case '/about/':
-    case '/about/index.html':
+      break;
+    case "/auctions/":
+    case "/auctions/index.html":
       // do something
-      break
-    case '/auctions/':
-    case '/auctions/index.html':
-      // do something
-      break
+      break;
     default:
   }
 }
 
-route()
+route();
