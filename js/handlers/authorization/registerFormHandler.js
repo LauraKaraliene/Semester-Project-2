@@ -2,7 +2,7 @@ import { registerUser } from "../../api/authorization/register.js";
 import { messageForUser } from "../../ui/messageForUser.js";
 // import { getAPIKey } from "../../api/authorization/apiKey.js";
 // import * as utils from "../../utils/storage/storage.js";
-import { save } from "../../utils/storage/storage.js";
+// import { save } from "../../utils/storage/storage.js";
 
 export function registerFormHandler() {
   const form = document.querySelector("#registerForm");
@@ -17,7 +17,6 @@ export function registerFormHandler() {
       alert("Avatar Alt Text requires Avatar URL to be set.");
       return;
     }
-
     try {
       await registerForm(event);
       // await getAPIKey();
@@ -52,19 +51,10 @@ async function registerForm(event) {
     const registrationResponse = await registerUser(profile);
     console.log("Registration response:", registrationResponse);
 
-    // const token = registrationResponse.token;
-
-    // if (token) {
-    //   save("token", token); // Save token
-    //   console.log("Token saved:", token);
-    // }
-
     messageForUser("#message", "success", "You are registered. Please login!");
-
     setTimeout(() => {
       window.location.href = "/login";
     }, 3000);
-
     form.reset();
   } catch (error) {
     console.log("Error during registration:", error);

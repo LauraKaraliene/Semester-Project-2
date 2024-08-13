@@ -9,6 +9,7 @@ function route() {
     case "/":
     case "/index.html":
       // do something
+      // getAPIKey();
       break;
     case "/register/":
     case "/register/index.html":

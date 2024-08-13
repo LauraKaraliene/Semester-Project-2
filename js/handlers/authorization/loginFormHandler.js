@@ -22,32 +22,13 @@ async function loginForm(event) {
     const { accessToken, name, email } = await loginUser(userData);
 
     if (accessToken) {
-      console.log("Saving accessToken:", accessToken);
       utils.save("token", accessToken);
-      console.log("Saved accessToken:", localStorage.getItem("token"));
       utils.save("userName", name);
       utils.save("email", email);
       console.log(accessToken, name, email);
 
-      // Retrieve the API key using the access token
-      const apiKeyResponse = await getAPIKey();
-
-      if (apiKeyResponse && apiKeyResponse.key) {
-        console.log("Saving API key:", apiKeyResponse.key);
-
-        utils.save("apiKey", apiKeyResponse.key);
-        console.log("API Key saved:", apiKeyResponse.key);
-      } else {
-        console.warn("API Key not retrieved.");
-      }
-
-      messageForUser("#message", "success", "You are Logged in!");
-
-      setTimeout(() => {
-        window.location.href = "/index.html";
-      }, 3000);
-
       form.reset();
+      window.location.href = "/index.html";
     }
   } catch (error) {
     console.error("Login error:", error.message);
