@@ -1,10 +1,11 @@
 import { loginUrl } from "../../constants/api.js";
+import { headers } from "./headers.js";
 
 export async function loginUser(userDetails) {
   const options = {
     method: "POST",
     body: JSON.stringify(userDetails),
-    headers: { "Content-Type": "application/json" },
+    headers: headers(true),
   };
   const response = await fetch(loginUrl, options);
 

@@ -1,10 +1,11 @@
 import { registerUrl } from "../../constants/api.js";
+import { headers } from "./headers.js";
 
 export async function registerUser(userDetails) {
   const options = {
     method: "POST",
     body: JSON.stringify(userDetails),
-    headers: { "Content-Type": "application/json" },
+    headers: headers(true),
   };
   const response = await fetch(registerUrl, options);
   const json = await response.json();

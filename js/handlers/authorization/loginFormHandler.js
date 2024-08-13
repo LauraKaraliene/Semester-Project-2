@@ -27,8 +27,8 @@ async function loginForm(event) {
       utils.save("email", email);
       console.log(accessToken, name, email);
 
-      form.reset();
-      window.location.href = "/index.html";
+      // form.reset();
+      // window.location.href = "/index.html";
     }
   } catch (error) {
     console.error("Login error:", error.message);
