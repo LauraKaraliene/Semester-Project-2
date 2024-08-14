@@ -1,5 +1,6 @@
 import { loginFormHandler } from "./handlers/authorization/loginFormHandler.js";
 import { registerFormHandler } from "./handlers/authorization/registerFormHandler.js";
+import { displayAllListingsHandler } from "./handlers/listings/displayAllListingsHandler.js";
 
 function route() {
   const path = window.location.pathname;
@@ -8,8 +9,7 @@ function route() {
   switch (path) {
     case "/":
     case "/index.html":
-      // do something
-      // getAPIKey();
+      displayAllListingsHandler();
       break;
     case "/register/":
     case "/register/index.html":

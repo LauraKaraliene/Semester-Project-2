@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home | BidNest</title>
     <link rel="stylesheet" href="/dist/css/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   </head>
   <body class="d-flex flex-column vh-100">
     <header class="bg-info">
@@ -25,13 +22,7 @@
               aria-controls="offcanvasRight"
               class="border-0"
             >
-              <img
-                src="images/user.png"
-                alt="Profile"
-                height="30"
-                width="30"
-                class="rounded-circle"
-              />
+              <img src="images/user.png" alt="Profile" height="30" width="30" class="rounded-circle" />
             </button>
             <div
               class="offcanvas offcanvas-end"
@@ -57,46 +48,30 @@
                     <h5 class="card-title mb-3 mt-2 fw-bold">UserName</h5>
                     <p class="card-text">username@stud.noroff.no</p>
                     <p>1000 credits</p>
-                    <a
-                      href="#"
-                      class="btn background-color-light border-primary mb-2 text-primary w-100"
+                    <a href="#" class="btn background-color-light border-primary mb-2 text-primary w-100"
                       >Edit profile</a
                     >
                     <a href="#" class="btn btn-primary w-100">+ New Listing</a>
                   </div>
                 </div>
                 <!-- Additional Container -->
-                <div
-                  class="container-fluid d-flex flex-column flex-grow-1 bg-info"
-                >
+                <div class="container-fluid d-flex flex-column flex-grow-1 bg-info">
                   <div class="row flex-grow-1 mb-3">
-                    <div
-                      class="col-12 d-flex flex-column justify-content-center"
-                    >
+                    <div class="col-12 d-flex flex-column justify-content-center">
                       <h6 class="fw-bold">All Auctions</h6>
-                      <p class="text-muted cursor-default fs-6">
-                        Currently, there are no auctions.
-                      </p>
+                      <p class="text-muted cursor-default fs-6">Currently, there are no auctions.</p>
                     </div>
                   </div>
                   <div class="row flex-grow-1 mb-3">
-                    <div
-                      class="col-12 d-flex flex-column justify-content-center"
-                    >
+                    <div class="col-12 d-flex flex-column justify-content-center">
                       <h6 class="fw-bold">All Wins</h6>
-                      <p class="text-muted cursor-default fs-6">
-                        You haven't won any auctions yet.
-                      </p>
+                      <p class="text-muted cursor-default fs-6">You haven't won any auctions yet.</p>
                     </div>
                   </div>
                   <div class="row flex-grow-1 mb-3">
-                    <div
-                      class="col-12 d-flex flex-column justify-content-center"
-                    >
+                    <div class="col-12 d-flex flex-column justify-content-center">
                       <h6 class="fw-bold">Bid History</h6>
-                      <p class="text-muted cursor-default fs-6">
-                        Your bid history is empty.
-                      </p>
+                      <p class="text-muted cursor-default fs-6">Your bid history is empty.</p>
                     </div>
                   </div>
                 </div>
@@ -125,9 +100,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item pe-3">
-              <a class="nav-link active text-dark" aria-current="page" href="#"
-                >Browse</a
-              >
+              <a class="nav-link active text-dark" aria-current="page" href="#">Browse</a>
             </li>
             <li class="nav-item pe-3">
               <a class="nav-link text-dark" href="#">Sell</a>
@@ -137,12 +110,7 @@
             </li>
           </ul>
           <form class="d-flex" role="search">
-            <input
-              class="form-control border-primary-light"
-              type="search"
-              placeholder=""
-              aria-label="Search"
-            />
+            <input class="form-control border-primary-light" type="search" placeholder="" aria-label="Search" />
             <button class="btn btn-outline-primary" type="submit">
               <i class="fas fa-search"></i>
             </button>
@@ -150,7 +118,11 @@
         </div>
       </div>
     </nav>
-    <main class="flex-grow-1"></main>
+    <main class="flex-grow-1">
+      <div id="listings" class="container mt-5">
+        <div class="loader">Loading...</div>
+      </div>
+    </main>
     <footer class="py-4 border-1 border-top border-primary sticky-footer">
       <div class="container text-center">
         <p class="text-muted mb-0">© 2024 BidNest | Built by Laura Karaliene</p>
