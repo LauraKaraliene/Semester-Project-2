@@ -1,15 +1,20 @@
 import { loginFormHandler } from "./handlers/authorization/loginFormHandler.js";
 import { registerFormHandler } from "./handlers/authorization/registerFormHandler.js";
 import { displayAllListingsHandler } from "./handlers/listings/displayAllListingsHandler.js";
+import { displaySingleListingHandler } from "./handlers/listings/displaySingleListingHandler.js";
 
 function route() {
   const path = window.location.pathname;
-  console.log(path);
+  console.log("Current path:", path);
 
   switch (path) {
     case "/":
     case "/index.html":
       displayAllListingsHandler();
+      break;
+    case "/listing/":
+    case "/listing.html":
+      displaySingleListingHandler();
       break;
     case "/register/":
     case "/register/index.html":
@@ -25,10 +30,6 @@ function route() {
       break;
     case "/about/":
     case "/about/index.html":
-      // do something
-      break;
-    case "/auctions/":
-    case "/auctions/index.html":
       // do something
       break;
     default:

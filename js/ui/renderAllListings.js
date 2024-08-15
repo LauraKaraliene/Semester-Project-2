@@ -29,7 +29,7 @@ function createListings(listing) {
   cardDiv.classList.add("col-md-3", "mb-4");
 
   const card = document.createElement("div");
-  card.classList.add("card", "h-100", "d-flex", "flex-column");
+  card.classList.add("card", "border-1", "border-primary", "h-100", "d-flex", "flex-column");
 
   //add images to the card
   const cardImgContainer = document.createElement("div");
@@ -66,7 +66,7 @@ function createListings(listing) {
 
   // Add the countdown timer
   const countdownDiv = document.createElement("p");
-  countdownDiv.classList.add("card-text", "mb-2", "text-muted");
+  countdownDiv.classList.add("card-text", "mb-2", "text-muted", "fs-6");
   cardBody.append(countdownDiv);
 
   //   //add the end date
@@ -78,7 +78,7 @@ function createListings(listing) {
   //add "view more" button
   const viewMoreBtn = document.createElement("a");
   viewMoreBtn.classList.add("btn", "text-primary", "border-1", "border-primary", "mt-3");
-  viewMoreBtn.href = `/listing.html?id=${id}`;
+  viewMoreBtn.href = `/listing/listing.html?id=${id}`;
   viewMoreBtn.textContent = "View more";
   cardBody.append(viewMoreBtn);
 
