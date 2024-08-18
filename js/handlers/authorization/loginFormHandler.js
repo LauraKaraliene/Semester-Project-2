@@ -1,7 +1,7 @@
 import { loginUser } from "../../api/authorization/login.js";
 import { messageForUser } from "../../ui/messageForUser.js";
 import * as utils from "../../utils/storage/storage.js";
-import { getAPIKey } from "../../api/authorization/apiKey.js";
+// import { getAPIKey } from "../../api/authorization/apiKey.js";
 
 export function loginFormHandler() {
   const form = document.querySelector("#loginForm");

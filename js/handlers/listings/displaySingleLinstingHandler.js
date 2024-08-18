@@ -17,6 +17,7 @@ export async function displaySingleListingHandler() {
     // const listing = response.data;
 
     const listing = await getSingleListing(id);
+    console.log("Fetched listing:", listing);
 
     console.log(listing);
 
