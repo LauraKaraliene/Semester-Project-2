@@ -2,7 +2,7 @@ import { authLinkHandler } from "./handlers/authorization/authLinkHandler.js";
 import { loginFormHandler } from "./handlers/authorization/loginFormHandler.js";
 import { registerFormHandler } from "./handlers/authorization/registerFormHandler.js";
 import { displayAllListingsHandler } from "./handlers/listings/displayAllListingsHandler.js";
-
+import { logoutHandler } from "./handlers/authorization/logoutHandler.js";
 // import { displaySingleListingHandler } from "./handlers/listings/displaySingleListingHandler.js";
 
 function route() {
@@ -13,13 +13,13 @@ function route() {
     case "/":
     case "/index.html":
       authLinkHandler();
+      logoutHandler();
       displayAllListingsHandler();
-
       break;
     case "/listing/":
     case "/listing.html":
       authLinkHandler();
-
+      logoutHandler();
       // displaySingleListingHandler();
       break;
     case "/register/":
@@ -33,12 +33,12 @@ function route() {
     case "/profile/":
     case "/profile/index.html":
       authLinkHandler();
-
+      logoutHandler();
       break;
     case "/about/":
     case "/about/index.html":
       authLinkHandler();
-
+      logoutHandler();
       break;
     default:
   }
