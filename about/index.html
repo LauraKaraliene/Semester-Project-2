@@ -10,53 +10,20 @@
 </head>
     <body class="m-0 d-flex flex-column vh-100"> 
       <header class="bg-info">
-          <section class="p-1"> 
-            <div> 
-              <ul class="nav justify-content-end align-items-center"> 
-                <li class="nav-item" id="authLink">
-                  <a class="nav-link text-dark" href="/login/index.html" id="authAction">Login</a>
-                </li>
-              <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="border-0"><img   src="../images/user.png" alt="Profile" height="30" width="30" class="rounded-circle"></button>
-              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                  <button type="button" class="btn-close m-2 display-flex align-self-end" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                <div class="offcanvas-body d-flex flex-column">
-                  <!-- User Info Card -->
-                  <div class="card border-0 mt-2 mb-3" style="width: 16rem;">
-                    <img src="../images/user.png" class="card-img-top border rounded-circle border-primary w-50"  alt="user image">
-                    <div class="card-body">
-                      <h5 class="card-title mb-3 mt-2 fw-bold">UserName</h5 >
-                      <p class="card-text">username@stud.noroff.no</p>
-                      <p>1000 credits</p>
-                      <a href="#" class="btn background-color-light border-primary mb-2 text-primary w-100">Edit profile</a>
-                      <a href="#" class="btn btn-primary w-100">+ New Listing</a>
-                    </div>
-                  </div>
-                  <!-- Additional Container -->
-                  <div class="container-fluid d-flex flex-column flex-grow-1 bg-info">
-                    <div class="row flex-grow-1 mb-3">
-                      <div class="col-12 d-flex flex-column justify-content-center">
-                        <h6 class="fw-bold">All Auctions</h6>
-                        <p class="text-muted cursor-default fs-6">Currently, there are no auctions.</p>
-                      </div>
-                    </div>
-                    <div class="row flex-grow-1 mb-3">
-                      <div class="col-12 d-flex flex-column justify-content-center">
-                        <h6 class="fw-bold">All Wins</h6>
-                        <p class="text-muted cursor-default fs-6">You haven't won any auctions yet.</p>
-                      </div>
-                    </div>
-                    <div class="row flex-grow-1 mb-3">
-                      <div class="col-12 d-flex flex-column justify-content-center">
-                        <h6 class="fw-bold">Bid History</h6>
-                        <p class="text-muted cursor-default fs-6">Your bid history is empty.</p>
-                      </div>
-                    </div>
-                  </div>
+        <section class="p-1">
+          <div>
+            <ul class="nav justify-content-end align-items-center">
+              <li class="nav-item" id="authLink">
+                <a class="nav-link text-dark" href="#" id="authAction">Login</a>
+              </li>
+              <a href="/profile/" class="border-0 me-3">
+                <img src="../images/user.png" alt="Profile" height="30" width="30" class="rounded-circle" />
+              </a>
                 </div>
               </div>
-              </ul> 
-            </div> 
-          </section> 
+            </ul>
+          </div>
+        </section>
       </header>
       <nav class="navbar navbar-expand-lg p-2">
         <div class="container-fluid">
