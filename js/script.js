@@ -3,7 +3,7 @@ import { loginFormHandler } from "./handlers/authorization/loginFormHandler.js";
 import { registerFormHandler } from "./handlers/authorization/registerFormHandler.js";
 import { displayAllListingsHandler } from "./handlers/listings/displayAllListingsHandler.js";
 import { logoutHandler } from "./handlers/authorization/logoutHandler.js";
-// import { displaySingleListingHandler } from "./handlers/listings/displaySingleListingHandler.js";
+import { displaySingleListingHandler } from "./handlers/listings/displaySingleListingHandler.js";
 
 function route() {
   const path = window.location.pathname;
@@ -17,10 +17,10 @@ function route() {
       displayAllListingsHandler();
       break;
     case "/listing/":
-    case "/listing.html":
+    case "/listing/listing.html":
       authLinkHandler();
       logoutHandler();
-      // displaySingleListingHandler();
+      displaySingleListingHandler();
       break;
     case "/register/":
     case "/register/index.html":

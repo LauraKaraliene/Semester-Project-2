@@ -1,10 +1,10 @@
-import { startCountdown } from "./countdown.js";
+// import { startCountdown } from "./countdown.js";
 
 export function renderSingleListing(parent, listing) {
   const container = document.querySelector(parent);
   container.innerHTML = "";
 
-  const { title, description, media, endsAt, _count, seller } = listing;
+  const { title, description, media, endsAt, _count = {}, seller } = listing;
 
   //main container
   const wrapperDiv = document.createElement("div");
@@ -12,18 +12,18 @@ export function renderSingleListing(parent, listing) {
 
   //image section
   const imageDiv = document.createElement("div");
-  imageDiv.classList.add("col-md-6");
+  imageDiv.classList.add("col-md-4");
 
   const img = document.createElement("img");
   if (media && media.length > 0 && media[0].url) {
     img.src = media[0].url;
     img.alt = media[0].alt || "Listing image";
   } else {
-    img.src = "images/placeholder.png"; // Path to your placeholder image
+    img.src = "../images/placeholder.png"; // Path to your placeholder image
     img.alt = "Placeholder image";
   }
   img.classList.add("img-fluid", "rounded", "shadow-sm");
-  imageSection.appendChild(img);
+  imageDiv.appendChild(img);
 
   //details section
   const detailsDiv = document.createElement("div");
@@ -51,11 +51,11 @@ export function renderSingleListing(parent, listing) {
   bidButton.textContent = "REGISTER TO BID";
 
   // Append all to the details section
-  detailsSection.append(titleElement, countdownElement, currentBidElement, bidButton);
+  detailsDiv.append(titleElement, countdownElement, currentBidElement, bidButton);
 
   //description section
-  const descriptionSection = document.createElement("div");
-  descriptionSection.classList.add("mt-4");
+  const descriptionDiv = document.createElement("div");
+  descriptionDiv.classList.add("mt-4");
 
   const descriptionTitle = document.createElement("h4");
   descriptionTitle.classList.add("fw-bold", "mb-3");
@@ -65,11 +65,11 @@ export function renderSingleListing(parent, listing) {
   descriptionElement.classList.add("text-muted");
   descriptionElement.textContent = description ?? "No description available.";
 
-  descriptionSection.append(descriptionTitle, descriptionElement);
+  descriptionDiv.append(descriptionTitle, descriptionElement);
 
   // Bid History
-  const bidHistorySection = document.createElement("div");
-  bidHistorySection.classList.add("mt-4");
+  const bidHistoryDiv = document.createElement("div");
+  bidHistoryDiv.classList.add("mt-4");
 
   const bidHistoryTitle = document.createElement("h4");
   bidHistoryTitle.classList.add("fw-bold", "mb-3");
@@ -85,11 +85,11 @@ export function renderSingleListing(parent, listing) {
   bidHistoryItem.innerHTML = `10 <span class="text-muted">user666 - 2 days ago</span>`;
 
   bidHistoryList.append(bidHistoryItem);
-  bidHistorySection.append(bidHistoryTitle, bidHistoryList);
+  bidHistoryDiv.append(bidHistoryTitle, bidHistoryList);
 
   // Seller Information
-  const sellerSection = document.createElement("div");
-  sellerSection.classList.add("mt-4");
+  const sellerDiv = document.createElement("div");
+  sellerDiv.classList.add("mt-4");
 
   const sellerTitle = document.createElement("h4");
   sellerTitle.classList.add("fw-bold", "mb-3");
@@ -99,7 +99,7 @@ export function renderSingleListing(parent, listing) {
   sellerInfo.classList.add("d-flex", "align-items-center");
 
   const sellerImg = document.createElement("img");
-  sellerImg.src = "images/user-placeholder.png"; // Placeholder for seller image
+  sellerImg.src = "../images/user.png";
   sellerImg.alt = "Seller image";
   sellerImg.classList.add("rounded-circle", "me-3");
   sellerImg.style.width = "50px";
@@ -109,12 +109,12 @@ export function renderSingleListing(parent, listing) {
   sellerName.textContent = seller?.name ?? "UserName";
 
   sellerInfo.append(sellerImg, sellerName);
-  sellerSection.append(sellerTitle, sellerInfo);
+  sellerDiv.append(sellerTitle, sellerInfo);
 
   // Append everything to the wrapper
-  wrapperDiv.append(imageSection, detailsSection);
-  container.append(wrapperDiv, descriptionSection, bidHistorySection, sellerSection);
+  wrapperDiv.append(imageDiv, detailsDiv);
+  container.append(wrapperDiv, descriptionDiv, bidHistoryDiv, sellerDiv);
 
   // Start the countdown
-  startCountdown(endsAt, document.getElementById("countdown"));
+  // startCountdown(endsAt, document.getElementById("countdown"));
 }

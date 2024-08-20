@@ -7,7 +7,7 @@ export async function getSingleListing(id) {
     headers: headers(),
   };
 
-  const response = await fetch(`${listingsUrl}/${id}`, options);
+  const response = await fetch(`${listingsUrl}/${id}?_seller=true&_bids=true`, options);
   console.log("Response status:", response.status);
   const results = await response.json();
 
