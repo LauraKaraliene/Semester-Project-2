@@ -65,15 +65,12 @@ function createListings(listing) {
   cardBody.append(bidCount);
 
   // Add the countdown timer
+  const endsIn = document.createElement("p");
   const countdownDiv = document.createElement("p");
-  countdownDiv.classList.add("card-text", "mb-2", "text-muted", "fs-6");
-  cardBody.append(countdownDiv);
-
-  //   //add the end date
-  //   const endDate = document.createElement("p");
-  //   endDate.classList.add("card-text", "mb-2", "text-muted");
-  //   endDate.innerHTML = `<strong>Ends At:</strong> ${new Date(endsAt).toLocaleDateString()}`;
-  //   cardBody.append(endDate);
+  endsIn.classList.add("card-text", "mb-0", "fs-6");
+  countdownDiv.classList.add("card-text", "mb-2", "fs-6");
+  endsIn.innerHTML = `<strong>Ends in:</strong>`;
+  cardBody.append(endsIn, countdownDiv);
 
   //add "view more" button
   const viewMoreBtn = document.createElement("a");

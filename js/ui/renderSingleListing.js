@@ -1,33 +1,41 @@
-// import { startCountdown } from "./countdown.js";
+import { startCountdown } from "./startCountdown.js";
 
 export function renderSingleListing(parent, listing) {
   const container = document.querySelector(parent);
   container.innerHTML = "";
 
-  const { title, description, media, endsAt, _count = {}, seller } = listing;
+  // const { title, description, media, endsAt, _count = {}, seller } = listing;
+  const { title, description, media, endsAt, _count = {}, seller } = listing.data;
 
   //main container
   const wrapperDiv = document.createElement("div");
-  wrapperDiv.classList.add("d-flex", "flex-column", "flex-md-row", "gap-4");
+  wrapperDiv.classList.add("d-flex", "col-md-10", "mx-auto", "gap-5");
 
   //image section
   const imageDiv = document.createElement("div");
-  imageDiv.classList.add("col-md-4");
+  imageDiv.classList.add("col-md-5");
 
-  const img = document.createElement("img");
-  if (media && media.length > 0 && media[0].url) {
-    img.src = media[0].url;
-    img.alt = media[0].alt || "Listing image";
+  if (media && media.length > 0) {
+    console.log("Rendering images:", media); // Log the media data to verify
+    media.forEach((item) => {
+      const img = document.createElement("img");
+      img.src = item.url;
+      img.alt = item.alt || "Listing image";
+      img.classList.add("img-fluid", "rounded", "shadow-sm", "mb-2");
+      imageDiv.appendChild(img);
+    });
   } else {
+    console.log("No media found, displaying placeholder.");
+    const img = document.createElement("img");
     img.src = "../images/placeholder.png"; // Path to your placeholder image
     img.alt = "Placeholder image";
+    img.classList.add("img-fluid", "rounded", "shadow-sm");
+    imageDiv.appendChild(img);
   }
-  img.classList.add("img-fluid", "rounded", "shadow-sm");
-  imageDiv.appendChild(img);
 
   //details section
   const detailsDiv = document.createElement("div");
-  detailsDiv.classList.add("col-md-6");
+  detailsDiv.classList.add("col-md-5");
 
   //title
   const titleElement = document.createElement("h1");
@@ -116,5 +124,5 @@ export function renderSingleListing(parent, listing) {
   container.append(wrapperDiv, descriptionDiv, bidHistoryDiv, sellerDiv);
 
   // Start the countdown
-  // startCountdown(endsAt, document.getElementById("countdown"));
+  startCountdown(endsAt, document.getElementById("countdown"));
 }
