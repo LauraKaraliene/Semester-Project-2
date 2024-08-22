@@ -4,23 +4,33 @@ import { registerFormHandler } from "./handlers/authorization/registerFormHandle
 import { displayAllListingsHandler } from "./handlers/listings/displayAllListingsHandler.js";
 import { logoutHandler } from "./handlers/authorization/logoutHandler.js";
 import { displaySingleListingHandler } from "./handlers/listings/displaySingleListingHandler.js";
+import { searchListingsHandler } from "./handlers/listings/searchListingsHandler.js";
+import { displaySearchResults } from "./handlers/listings/displaySearchResults.js";
 
 function route() {
   const path = window.location.pathname;
   console.log("Current path:", path);
+  const urlParams = new URLSearchParams(window.location.search);
+  const searchQuery = urlParams.get("search");
 
   switch (path) {
     case "/":
     case "/index.html":
       authLinkHandler();
       logoutHandler();
-      displayAllListingsHandler();
+      if (searchQuery) {
+        displaySearchResults(); // Only display search results if there's a search query
+      } else {
+        displayAllListingsHandler(); // Otherwise, display all listings
+      }
+      searchListingsHandler(); // Attach the search handler
       break;
     case "/listing/":
     case "/listing/listing.html":
       authLinkHandler();
       logoutHandler();
       displaySingleListingHandler();
+      searchListingsHandler();
       break;
     case "/register/":
     case "/register/index.html":
@@ -34,11 +44,13 @@ function route() {
     case "/profile/index.html":
       authLinkHandler();
       logoutHandler();
+      searchListingsHandler();
       break;
     case "/about/":
     case "/about/index.html":
       authLinkHandler();
       logoutHandler();
+      searchListingsHandler();
       break;
     default:
   }
