@@ -6,3 +6,4 @@ export const apiKey = "b9d63dfc-6f7d-4895-a887-bc16b7e6a772";
 export const listingsUrl = `${baseUrl}auction/listings`;
 // export const searchUrl = `${baseUrl}auction/listings/search?q=<query>`;
 export const searchUrl = `${baseUrl}auction/listings/search`;
+export const profilesUrl = `${baseUrl}auction/profiles`;

@@ -13,8 +13,15 @@ export function startCountdown(endTime, countdownElement) {
     const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-    // countdownElement.innerHTML = `<strong>Ends in:</strong> ${days}d ${hours}h ${minutes}m ${seconds}s`;
     countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    // Change color to red if less than 12 hours left
+    if (timeRemaining < 12 * 60 * 60 * 1000) {
+      // 12 hours in milliseconds
+      countdownElement.style.color = "red";
+    } else {
+      countdownElement.style.color = ""; // Reset to default color
+    }
 
     // Update countdown every second
     setTimeout(updateCountdown, 1000);

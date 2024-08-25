@@ -6,6 +6,7 @@ import { logoutHandler } from "./handlers/authorization/logoutHandler.js";
 import { displaySingleListingHandler } from "./handlers/listings/displaySingleListingHandler.js";
 import { searchListingsHandler } from "./handlers/listings/searchListingsHandler.js";
 import { displaySearchResults } from "./handlers/listings/displaySearchResults.js";
+import { displayProfileHandler } from "./handlers/profiles/displayProfileHandler.js";
 
 function route() {
   const path = window.location.pathname;
@@ -45,6 +46,7 @@ function route() {
       authLinkHandler();
       logoutHandler();
       searchListingsHandler();
+      displayProfileHandler();
       break;
     case "/about/":
     case "/about/index.html":
