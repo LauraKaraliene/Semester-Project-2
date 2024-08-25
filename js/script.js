@@ -8,6 +8,7 @@ import { searchListingsHandler } from "./handlers/listings/searchListingsHandler
 import { displaySearchResults } from "./handlers/listings/displaySearchResults.js";
 import { displayProfileHandler } from "./handlers/profiles/displayProfileHandler.js";
 import { editProfileHandler } from "./handlers/profiles/editProfileHandler.js";
+import { addListingHandler } from "./handlers/listings/addListingsHandler.js";
 
 function route() {
   const path = window.location.pathname;
@@ -49,6 +50,7 @@ function route() {
       searchListingsHandler();
       displayProfileHandler();
       editProfileHandler();
+      addListingHandler();
       break;
     case "/about/":
     case "/about/index.html":
@@ -60,4 +62,5 @@ function route() {
   }
 }
 
-route();
+// route();
+document.addEventListener("DOMContentLoaded", route);

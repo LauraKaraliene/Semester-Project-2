@@ -123,66 +123,6 @@
       </div>
     </nav>
     <main class="">
-        <!-- <section class="container col-md-8 col-12 mt-5">
-          <div id="messageForUser" class="mt-3 mb-1 col-md-8 text-center mx-auto"></div>
-            <div class="row d-flex justify-content-center">
-                <div class="card mb-3 border-0">
-                    <div class="row g-0 d-flex align-items-center">
-                        <div class="col-md-3 text-center">
-                            <img src="../images/user.png" class="img-fluid rounded-circle" alt="Profile Picture" style="width: 200px;">
-                        </div>
-                        <div class="col-md-9">
-                            <div class="card-body">
-                                <h5 class="card-title">UserName</h5>
-                                <p class="card-text">1000 credits</p>
-                                <p class="card-text">Bio</p>
-                                <div class="d-flex flex-column justify-content-start col-md-3">
-                                    <button class="btn border-primary border-1 my-1 text-primary">Edit profile</button>
-                                    <button class="btn btn-primary text-light my-1">+ New Auction</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-        <!-- <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <form id="editProfileForm">
-                  <div class="mb-3">
-                    <label for="bio" class="form-label">Bio</label>
-                    <textarea class="form-control" id="bio" name="bio" rows="3"></textarea>
-                  </div>
-                  <div class="mb-3">
-                    <label for="avatarUrl" class="form-label">Avatar URL</label>
-                    <input type="url" class="form-control" id="avatarUrl" name="avatarUrl">
-                  </div>
-                  <div class="mb-3">
-                    <label for="avatarAlt" class="form-label">Avatar Alt Text</label>
-                    <input type="text" class="form-control" id="avatarAlt" name="avatarAlt">
-                  </div>
-                  <div class="mb-3">
-                    <label for="bannerUrl" class="form-label">Banner URL</label>
-                    <input type="url" class="form-control" id="bannerUrl" name="bannerUrl">
-                  </div>
-                  <div class="mb-3">
-                    <label for="bannerAlt" class="form-label">Banner Alt Text</label>
-                    <input type="text" class="form-control" id="bannerAlt" name="bannerAlt">
-                  </div>
-                  <button type="submit" class="btn btn-primary">Save changes</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        
 <!-- modal for editing profile -->
 <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -209,7 +149,6 @@
                   rows="3"
                 ></textarea>
               </div>
-
               <div class="w-100 mb-3">
                 <input
                   type="url"
@@ -221,7 +160,6 @@
                   placeholder="Avatar URL"
                 />
               </div>
-
               <div class="w-100 mb-3">
                 <input
                   maxlength="120"
@@ -244,6 +182,94 @@
   </div>
 </div>
 
+<!-- Modal for Creating New Listing -->
+<div class="modal fade" id="newListingModal" tabindex="-1" aria-labelledby="newListingModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newListingModalLabel">Create New Listing</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="mx-auto d-flex flex-column" id="newListingForm">
+          <div class="mb-2">
+            <div id="messageForUser" class="mt-3 mb-2 text-center"></div>
+            <fieldset>
+              <!-- Title Input -->
+              <div class="w-100 mb-3">
+                <input
+                  required
+                  type="text"
+                  name="title"
+                  class="form-control border-1 border-primary form-input"
+                  id="listingTitle"
+                  placeholder="Listing Title"
+                />
+              </div>
+
+              <!-- Description Input -->
+              <div class="w-100 mb-3">
+                <textarea
+                  type="text"
+                  name="description"
+                  class="form-control border-1 border-primary form-input"
+                  id="listingDescription"
+                  placeholder="Description"
+                  rows="3"
+                ></textarea>
+              </div>
+
+              <!-- Media URL Inputs -->
+              <div id="mediaInputsContainer">
+                <div class="w-100 mb-3">
+                  <input
+                    type="url"
+                    name="media-url"
+                    class="form-control border-1 border-primary form-input"
+                    id="listingMediaUrl"
+                    placeholder="Media URL"
+                  />
+                </div>
+                <div class="w-100 mb-3">
+                  <input
+                    maxlength="120"
+                    type="text"
+                    name="media-alt"
+                    class="form-control border-1 border-primary form-input"
+                    id="listingMediaAlt"
+                    placeholder="Media Alt Text"
+                  />
+                </div>
+              </div>
+
+              <!-- Add More Images Button -->
+              <button type="button" id="addImageField" class="btn btn-secondary mb-3">Add More Images</button>
+
+              <!-- Ends At Input -->
+              <div class="w-100 mb-3">
+                <input
+                  required
+                  type="datetime-local"
+                  name="ends-at"
+                  class="form-control border-1 border-primary form-input"
+                  id="listingEndsAt"
+                  placeholder="Ends At"
+                />
+              </div>
+
+              <!-- Submit Button -->
+              <div class="d-grid gap-2 col-6 mx-auto w-100">
+                <button type="submit" class="btn btn-primary mb-3 mt-2">Create Listing</button>
+              </div>
+            </fieldset>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
         <section id="profileContainer" class="container col-md-8 col-12 mt-5">
           <div class="row d-flex justify-content-center">
@@ -259,7 +285,7 @@
                     <p class="card-text bio-text">Bio</p>
                     <div class="d-flex flex-column justify-content-start col-md-6">
                       <button class="btn border-primary border-1 my-1 text-primary">Edit profile</button>
-                      <button class="btn btn-primary text-light my-1">+ New Auction</button>
+                      <button class="btn btn-primary text-light my-1" id="newListingsButton">+ New Listing</button>
                     </div>
                   </div>
                 </div>

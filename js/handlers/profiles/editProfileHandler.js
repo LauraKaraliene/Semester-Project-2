@@ -5,10 +5,17 @@ import { headers } from "../../api/authorization/headers.js";
 import { profilesUrl } from "../../constants/api.js";
 
 export function editProfileHandler() {
-  // Add the event listener to show the modal when the "Edit Profile" button is clicked
   document.querySelector(".btn.text-primary").addEventListener("click", function () {
     const editProfileModal = new bootstrap.Modal(document.getElementById("editProfileModal"));
     editProfileModal.show();
+  });
+
+  //backdrop is removed when the modal is closed
+  document.getElementById("editProfileModal").addEventListener("hidden.bs.modal", function () {
+    const backdrop = document.querySelector(".modal-backdrop");
+    if (backdrop) {
+      backdrop.remove();
+    }
   });
 
   // Handle the form submission inside the modal
@@ -18,15 +25,11 @@ export function editProfileHandler() {
 
     const formData = new FormData(form);
     const profileData = Object.fromEntries(formData.entries());
-
-    // Construct the profile object
     const profile = {};
 
-    // Only include fields if they are provided and valid
     if (profileData.bio) {
       profile.bio = profileData.bio;
     }
-
     if (profileData["avatar-url"]) {
       profile.avatar = {
         url: profileData["avatar-url"],
@@ -39,7 +42,6 @@ export function editProfileHandler() {
       messageForUser("#messageForUser", "danger", "Please provide at least one field to update.");
       return;
     }
-
     try {
       const userName = getUserName();
       console.log("Profile data to be sent:", profile);
