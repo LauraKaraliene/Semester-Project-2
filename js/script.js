@@ -7,6 +7,7 @@ import { displaySingleListingHandler } from "./handlers/listings/displaySingleLi
 import { searchListingsHandler } from "./handlers/listings/searchListingsHandler.js";
 import { displaySearchResults } from "./handlers/listings/displaySearchResults.js";
 import { displayProfileHandler } from "./handlers/profiles/displayProfileHandler.js";
+import { editProfileHandler } from "./handlers/profiles/editProfileHandler.js";
 
 function route() {
   const path = window.location.pathname;
@@ -47,6 +48,7 @@ function route() {
       logoutHandler();
       searchListingsHandler();
       displayProfileHandler();
+      editProfileHandler();
       break;
     case "/about/":
     case "/about/index.html":

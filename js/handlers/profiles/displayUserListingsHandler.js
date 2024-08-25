@@ -9,7 +9,6 @@ export async function displayUserListingsHandler() {
 
   try {
     const response = await fetch(url, {
-      method: "GET",
       headers: headers(),
     });
 
