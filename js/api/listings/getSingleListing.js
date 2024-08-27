@@ -2,7 +2,6 @@ import { listingsUrl } from "../../constants/api.js";
 import { headers } from "../authorization/headers.js";
 
 export async function getSingleListing(id) {
-  // console.log(`Fetching: ${listingsUrl}/${id}`);
   const options = {
     headers: headers(),
   };
@@ -18,16 +17,3 @@ export async function getSingleListing(id) {
   console.log("Fetched listings data:", results);
   return results;
 }
-
-// export async function getSingleListing(id) {
-//   const response = await fetch(`${listingsUrl}/${id}`, {
-//     method: "GET",
-//     headers: headers(),
-//   });
-
-//   if (!response.ok) {
-//     throw new Error(`Error: ${response.status} ${response.statusText}`);
-//   }
-
-//   return await response.json();
-// }

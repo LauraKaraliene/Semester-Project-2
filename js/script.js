@@ -12,6 +12,8 @@ import { addListingHandler } from "./handlers/listings/addListingHandler.js";
 import { displayAllUserListingsHandler } from "./handlers/profiles/displayAllUserListingsHandler.js";
 import { displayAllUserWinsHandler } from "./handlers/profiles/displayAllUserWinsHandler.js";
 import { displayAllUserBidsHandler } from "./handlers/profiles/displayAllUserBidsHandler.js";
+import { editListingHandler } from "./handlers/listings/editListingHandler.js";
+import { deleteListingHandler } from "./handlers/listings/deleteListingHandler.js";
 
 function route() {
   const path = window.location.pathname;
@@ -37,6 +39,7 @@ function route() {
       logoutHandler();
       displaySingleListingHandler();
       searchListingsHandler();
+      deleteListingHandler();
       break;
     case "/register/":
     case "/register/index.html":
@@ -66,6 +69,8 @@ function route() {
       addListingHandler();
       logoutHandler();
       break;
+    case "/profile/edit-listing.html":
+      editListingHandler();
     case "/about/":
     case "/about/index.html":
       authLinkHandler();
