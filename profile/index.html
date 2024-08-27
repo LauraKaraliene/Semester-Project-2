@@ -107,7 +107,7 @@
               <a class="nav-link active text-dark" aria-current="page" href="../index.html">Browse</a>
             </li>
             <li class="nav-item pe-3">
-              <a class="nav-link text-dark" href="#">Sell</a>
+              <a class="nav-link text-dark" href="/profile/add-listing.html">Sell</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-dark" href="/about/">About</a>
@@ -123,155 +123,65 @@
       </div>
     </nav>
     <main class="">
-<!-- modal for editing profile -->
-<div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form class="mx-auto d-flex flex-column" id="editProfileForm">
-          <div class="mb-2">
-            <div id="messageForUser" class="mt-3 mb-2 text-center"></div>
-            <fieldset>
-              <div class="w-100 mb-3">
-                <textarea
-                  required
-                  maxlength="160"
-                  type="text"
-                  name="bio"
-                  title="User bio must only contain upper case and lower case letters, numbers, and underscore!"
-                  class="form-control border-1 border-primary form-input"
-                  id="bio"
-                  placeholder="Bio"
-                  rows="3"
-                ></textarea>
+      <!-- modal for editing profile -->
+        <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="w-100 mb-3">
-                <input
-                  type="url"
-                  name="avatar-url"
-                  title=""
-                  class="form-control border-1 border-primary form-input"
-                  id="avatarUrl"
-                  aria-describedby="avatarUrlHelp"
-                  placeholder="Avatar URL"
-                />
+              <div class="modal-body">
+                <form class="mx-auto d-flex flex-column" id="editProfileForm">
+                  <div class="mb-2">
+                    <div id="messageForUser" class="mt-3 mb-2 text-center"></div>
+                    <fieldset>
+                      <div class="w-100 mb-3">
+                        <textarea
+                          required
+                          maxlength="160"
+                          type="text"
+                          name="bio"
+                          title="User bio must only contain upper case and lower case letters, numbers, and underscore!"
+                          class="form-control border-1 border-primary form-input"
+                          id="bio"
+                          placeholder="Bio"
+                          rows="3"
+                        ></textarea>
+                      </div>
+                      <div class="w-100 mb-3">
+                        <input
+                          type="url"
+                          name="avatar-url"
+                          title=""
+                          class="form-control border-1 border-primary form-input"
+                          id="avatarUrl"
+                          aria-describedby="avatarUrlHelp"
+                          placeholder="Avatar URL"
+                        />
+                      </div>
+                      <div class="w-100 mb-3">
+                        <input
+                          maxlength="120"
+                          type="text"
+                          name="avatar-alt"
+                          title=""
+                          class="form-control border-1 border-primary form-input"
+                          id="avatarAlt"
+                          placeholder="Avatar Alt Text"
+                        />
+                      </div>
+                      <div class="d-grid gap-2 col-6 mx-auto w-100">
+                        <button type="submit" class="btn btn-primary mb-3 mt-2">Save Changes</button>
+                      </div>
+                    </fieldset>
+                  </div>
+                </form>
               </div>
-              <div class="w-100 mb-3">
-                <input
-                  maxlength="120"
-                  type="text"
-                  name="avatar-alt"
-                  title=""
-                  class="form-control border-1 border-primary form-input"
-                  id="avatarAlt"
-                  placeholder="Avatar Alt Text"
-                />
-              </div>
-              <div class="d-grid gap-2 col-6 mx-auto w-100">
-                <button type="submit" class="btn btn-primary mb-3 mt-2">Save Changes</button>
-              </div>
-            </fieldset>
+            </div>
           </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal for Creating New Listing -->
-<div class="modal fade" id="newListingModal" tabindex="-1" aria-labelledby="newListingModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="newListingModalLabel">Create New Listing</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form class="mx-auto d-flex flex-column" id="newListingForm">
-          <div class="mb-2">
-            <div id="messageForUser" class="mt-3 mb-2 text-center"></div>
-            <fieldset>
-              <!-- Title Input -->
-              <div class="w-100 mb-3">
-                <input
-                  required
-                  type="text"
-                  name="title"
-                  class="form-control border-1 border-primary form-input"
-                  id="listingTitle"
-                  placeholder="Listing Title"
-                />
-              </div>
-
-              <!-- Description Input -->
-              <div class="w-100 mb-3">
-                <textarea
-                  type="text"
-                  name="description"
-                  class="form-control border-1 border-primary form-input"
-                  id="listingDescription"
-                  placeholder="Description"
-                  rows="3"
-                ></textarea>
-              </div>
-
-              <!-- Media URL Inputs -->
-              <div id="mediaInputsContainer">
-                <div class="w-100 mb-3">
-                  <input
-                    type="url"
-                    name="media-url"
-                    class="form-control border-1 border-primary form-input"
-                    id="listingMediaUrl"
-                    placeholder="Media URL"
-                  />
-                </div>
-                <div class="w-100 mb-3">
-                  <input
-                    maxlength="120"
-                    type="text"
-                    name="media-alt"
-                    class="form-control border-1 border-primary form-input"
-                    id="listingMediaAlt"
-                    placeholder="Media Alt Text"
-                  />
-                </div>
-              </div>
-
-              <!-- Add More Images Button -->
-              <button type="button" id="addImageField" class="btn btn-secondary mb-3">Add More Images</button>
-
-              <!-- Ends At Input -->
-              <div class="w-100 mb-3">
-                <input
-                  required
-                  type="datetime-local"
-                  name="ends-at"
-                  class="form-control border-1 border-primary form-input"
-                  id="listingEndsAt"
-                  placeholder="Ends At"
-                />
-              </div>
-
-              <!-- Submit Button -->
-              <div class="d-grid gap-2 col-6 mx-auto w-100">
-                <button type="submit" class="btn btn-primary mb-3 mt-2">Create Listing</button>
-              </div>
-            </fieldset>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-        <section id="profileContainer" class="container col-md-8 col-12 mt-5">
+        </div>
+      <section id="profileContainer" class="container col-md-8 col-12 mt-5">
           <div class="row d-flex justify-content-center">
             <div class="card mb-3 border-0">
               <div class="row g-0 d-flex align-items-center">
@@ -285,35 +195,40 @@
                     <p class="card-text bio-text">Bio</p>
                     <div class="d-flex flex-column justify-content-start col-md-6">
                       <button class="btn border-primary border-1 my-1 text-primary">Edit profile</button>
-                      <button class="btn btn-primary text-light my-1" id="newListingsButton">+ New Listing</button>
+                      <button class="btn btn-primary text-light my-1" id="newListingButton">+ New Listing</button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-        
-        <section class="container col-md-8 col-12 mt-4">
-            <div class="row justify-content-center">
-                <div class="col-md-12">
-                    <div class="p-4 bg-secondary text-dark py-4">
-                        <h5 class="mb-4">All Auctions</h5>
-                        <p>No auctions to display yet.</p>
-                    </div>
-                    <div class="p-4 bg-secondary text-dark py-4">
-                        <h5 class="mb-4">All Wins</h5>
-                        <p>No wins to display yet.</p>
-                    </div>
-                    <div class="p-4 bg-secondary text-dark">
-                        <h5 class="mb-4">Bid History</h5>
-                        <p>No bids to display yet.</p>
-                    </div>
-                </div>
+      </section>
+
+
+        <!-- All Listings Section -->
+        <section id="allListingsSection" class="container col-md-8 col-12 mt-4">
+          <div class="row justify-content-center">
+            <div class="p-4 bg-secondary text-dark py-4">
+              <h5 class="mb-4">All Auctions</h5>
+              <div  id="allAuctions"></div>
             </div>
+            </div>
+          <div class="row justify-content-center">
+            <div class="p-4 bg-secondary text-dark py-4">
+              <h5 class="mb-4">All Wins</h5>
+              <div  id="allWins"></div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="p-4 bg-secondary text-dark py-4">
+              <h5 class="mb-4">Bid History</h5>
+              <div  id="bidHistory"></div>
+            </div>
+          </div>
         </section>
+
+
     </main>
-    
     <footer class="py-4 border-1 border-top border-primary sticky-footer">
       <div class="container text-center">
         <p class="text-muted mb-0">© 2024 BidNest | Built by Laura Karaliene</p>

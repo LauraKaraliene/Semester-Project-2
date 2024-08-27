@@ -16,9 +16,11 @@ export function renderAllListings(parent, listings) {
   });
 
   rowDiv.append(...allListingsHtml);
-
   container.append(rowDiv);
-  loader.style.display = "none";
+
+  if (loader) {
+    loader.style.display = "none";
+  }
 }
 
 function createListings(listing) {

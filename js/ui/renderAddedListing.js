@@ -1,41 +1,41 @@
 import { startCountdown } from "./startCountdown.js";
 
-export function renderAddedListing(parentSelector, listing) {
-  const container = document.querySelector(parentSelector);
+// export function renderAddedListing(parentSelector, listing) {
+//   const container = document.querySelector(parentSelector);
 
-  const { id, title, _count = {}, endsAt } = listing;
+//   const { id, title, _count = {}, endsAt } = listing;
 
-  const wrapperDiv = document.createElement("div");
-  wrapperDiv.classList.add("listing-item", "mb-3");
+//   const wrapperDiv = document.createElement("div");
+//   wrapperDiv.classList.add("listing-item", "mb-3");
 
-  // Create a link for the listing
-  const listingLink = document.createElement("a");
-  listingLink.href = `/profile/single-listing.html?id=${id}`;
-  listingLink.classList.add("text-decoration-none", "text-dark");
+//   // Create a link for the listing
+//   const listingLink = document.createElement("a");
+//   listingLink.href = `/profile/single-listing.html?id=${id}`;
+//   listingLink.classList.add("text-decoration-none", "text-dark");
 
-  // Title element
-  const titleElement = document.createElement("h5");
-  titleElement.classList.add("fw-bold", "mb-2");
-  titleElement.textContent = title ?? "No title";
+//   // Title element
+//   const titleElement = document.createElement("h5");
+//   titleElement.classList.add("fw-bold", "mb-2");
+//   titleElement.textContent = title ?? "No title";
 
-  // Bids count element
-  const bidsElement = document.createElement("p");
-  bidsElement.classList.add("text-muted", "mb-1");
-  bidsElement.innerHTML = `<strong>Bids:</strong> ${_count.bids ?? 0}`;
+//   // Bids count element
+//   const bidsElement = document.createElement("p");
+//   bidsElement.classList.add("text-muted", "mb-1");
+//   bidsElement.innerHTML = `<strong>Bids:</strong> ${_count.bids ?? 0}`;
 
-  // Countdown element
-  const countdownElement = document.createElement("p");
-  countdownElement.classList.add("text-muted", "mb-1");
-  countdownElement.innerHTML = `<strong>Ends in:</strong> <span id="countdown-${id}"></span>`;
+//   // Countdown element
+//   const countdownElement = document.createElement("p");
+//   countdownElement.classList.add("text-muted", "mb-1");
+//   countdownElement.innerHTML = `<strong>Ends in:</strong> <span id="countdown-${id}"></span>`;
 
-  // Append elements to the link and then to the wrapper
-  listingLink.append(titleElement, bidsElement, countdownElement);
-  wrapperDiv.appendChild(listingLink);
-  container.appendChild(wrapperDiv);
+//   // Append elements to the link and then to the wrapper
+//   listingLink.append(titleElement, bidsElement, countdownElement);
+//   wrapperDiv.appendChild(listingLink);
+//   container.appendChild(wrapperDiv);
 
-  // Start the countdown
-  startCountdown(endsAt, document.getElementById(`countdown-${id}`));
-}
+//   // Start the countdown
+//   startCountdown(endsAt, document.getElementById(`countdown-${id}`));
+// }
 
 // export function renderAddedListing(parentSelector, listing) {
 //   const container = document.querySelector(parentSelector);

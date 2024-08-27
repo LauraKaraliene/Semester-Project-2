@@ -8,7 +8,8 @@ import { searchListingsHandler } from "./handlers/listings/searchListingsHandler
 import { displaySearchResults } from "./handlers/listings/displaySearchResults.js";
 import { displayProfileHandler } from "./handlers/profiles/displayProfileHandler.js";
 import { editProfileHandler } from "./handlers/profiles/editProfileHandler.js";
-import { addListingHandler } from "./handlers/listings/addListingsHandler.js";
+import { addListingHandler } from "./handlers/listings/addListingHandler.js";
+import { displayAllUserListingsHandler } from "./handlers/profiles/displayAllUserListingsHandler.js";
 
 function route() {
   const path = window.location.pathname;
@@ -50,7 +51,16 @@ function route() {
       searchListingsHandler();
       displayProfileHandler();
       editProfileHandler();
+      document.getElementById("newListingButton").addEventListener("click", function () {
+        window.location.href = "/profile/add-listing.html";
+      });
+      displayAllUserListingsHandler();
+      break;
+    case "/profile/add-listing.html":
+      authLinkHandler();
+      searchListingsHandler();
       addListingHandler();
+      logoutHandler();
       break;
     case "/about/":
     case "/about/index.html":
@@ -59,6 +69,8 @@ function route() {
       searchListingsHandler();
       break;
     default:
+      console.warn("No specific handler for this path:", path);
+      break;
   }
 }
 
