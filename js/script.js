@@ -10,6 +10,7 @@ import { displayProfileHandler } from "./handlers/profiles/displayProfileHandler
 import { editProfileHandler } from "./handlers/profiles/editProfileHandler.js";
 import { addListingHandler } from "./handlers/listings/addListingHandler.js";
 import { displayAllUserListingsHandler } from "./handlers/profiles/displayAllUserListingsHandler.js";
+import { displayAllUserWinsHandler } from "./handlers/profiles/displayAllUserWinsHandler.js";
 
 function route() {
   const path = window.location.pathname;
@@ -55,6 +56,7 @@ function route() {
         window.location.href = "/profile/add-listing.html";
       });
       displayAllUserListingsHandler();
+      displayAllUserWinsHandler();
       break;
     case "/profile/add-listing.html":
       authLinkHandler();
