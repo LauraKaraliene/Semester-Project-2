@@ -133,7 +133,7 @@ export function renderSingleListing(parent, listing) {
   const sellerInfo = document.createElement("div");
 
   const sellerLink = document.createElement("a");
-  sellerLink.href = "#";
+  sellerLink.href = `/other-user-profile.html?username=${encodeURIComponent(seller.name)}`;
   sellerLink.textContent = seller?.name ?? "UserName";
   sellerLink.classList.add("text-decoration-none", "mb-0", "p-0");
 

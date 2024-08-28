@@ -15,6 +15,7 @@ import { displayAllUserBidsHandler } from "./handlers/profiles/displayAllUserBid
 import { editListingHandler } from "./handlers/listings/editListingHandler.js";
 import { deleteListingHandler } from "./handlers/listings/deleteListingHandler.js";
 import { placeBidHandler } from "./handlers/listings/placeBidHandler.js";
+// import { displayOtherUserProfileHandler } from "./handlers/profiles/displayOtherUserProfileHandler.js";
 
 function route() {
   const path = window.location.pathname;
@@ -73,6 +74,13 @@ function route() {
       break;
     case "/profile/edit-listing.html":
       editListingHandler();
+      break;
+    case "/profile/other-user-profile.html":
+      authLinkHandler();
+      searchListingsHandler();
+      logoutHandler();
+      // displayOtherUserProfileHandler();
+      break;
     case "/about/":
     case "/about/index.html":
       authLinkHandler();
