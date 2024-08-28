@@ -14,6 +14,7 @@ import { displayAllUserWinsHandler } from "./handlers/profiles/displayAllUserWin
 import { displayAllUserBidsHandler } from "./handlers/profiles/displayAllUserBidsHandler.js";
 import { editListingHandler } from "./handlers/listings/editListingHandler.js";
 import { deleteListingHandler } from "./handlers/listings/deleteListingHandler.js";
+import { placeBidHandler } from "./handlers/listings/placeBidHandler.js";
 
 function route() {
   const path = window.location.pathname;
@@ -40,6 +41,7 @@ function route() {
       displaySingleListingHandler();
       searchListingsHandler();
       deleteListingHandler();
+      placeBidHandler();
       break;
     case "/register/":
     case "/register/index.html":
