@@ -9,13 +9,10 @@ import { displaySearchResults } from "./handlers/listings/displaySearchResults.j
 import { displayProfileHandler } from "./handlers/profiles/displayProfileHandler.js";
 import { editProfileHandler } from "./handlers/profiles/editProfileHandler.js";
 import { addListingHandler } from "./handlers/listings/addListingHandler.js";
-import { displayAllUserListingsHandler } from "./handlers/profiles/displayAllUserListingsHandler.js";
-import { displayAllUserWinsHandler } from "./handlers/profiles/displayAllUserWinsHandler.js";
-import { displayAllUserBidsHandler } from "./handlers/profiles/displayAllUserBidsHandler.js";
 import { editListingHandler } from "./handlers/listings/editListingHandler.js";
 import { deleteListingHandler } from "./handlers/listings/deleteListingHandler.js";
 import { placeBidHandler } from "./handlers/listings/placeBidHandler.js";
-// import { displayOtherUserProfileHandler } from "./handlers/profiles/displayOtherUserProfileHandler.js";
+import { displayOtherUserProfileHandler } from "./handlers/profiles/displayOtherUserProfileHandler.js";
 
 function route() {
   const path = window.location.pathname;
@@ -62,9 +59,6 @@ function route() {
       document.getElementById("newListingButton").addEventListener("click", function () {
         window.location.href = "/profile/add-listing.html";
       });
-      displayAllUserListingsHandler();
-      displayAllUserWinsHandler();
-      displayAllUserBidsHandler();
       break;
     case "/profile/add-listing.html":
       authLinkHandler();
@@ -79,7 +73,7 @@ function route() {
       authLinkHandler();
       searchListingsHandler();
       logoutHandler();
-      // displayOtherUserProfileHandler();
+      displayOtherUserProfileHandler();
       break;
     case "/about/":
     case "/about/index.html":
