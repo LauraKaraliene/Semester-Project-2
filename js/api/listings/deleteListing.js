@@ -1,29 +1,10 @@
 import { listingsUrl } from "../../constants/api.js";
-import { getToken } from "../../utils/helpers/token.js";
-import { getAPIKey } from "../authorization/apiKey.js";
+import { headers } from "../authorization/headers.js";
 
 export async function deleteListing(id) {
-  const token = getToken();
-  const apiKey = getAPIKey(); // Retrieve the API key
-
-  console.log("Token:", token);
-  console.log("API Key:", apiKey);
-
-  if (!token) {
-    throw new Error("You must be logged in to delete listings");
-  }
-
-  if (!apiKey) {
-    throw new Error("API key is missing");
-  }
-
   const options = {
     method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-      "x-api-key": apiKey,
-    },
+    headers: headers(), // Use the centralized headers function
   };
 
   const deleteUrl = `${listingsUrl}/${id}`;
