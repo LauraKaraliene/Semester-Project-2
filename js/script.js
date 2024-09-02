@@ -13,6 +13,7 @@ import { editListingHandler } from "./handlers/listings/editListingHandler.js";
 import { deleteListingHandler } from "./handlers/listings/deleteListingHandler.js";
 import { placeBidHandler } from "./handlers/listings/placeBidHandler.js";
 import { displayOtherUserProfileHandler } from "./handlers/profiles/displayOtherUserProfileHandler.js";
+// import { requireRegistrationHandler } from "./handlers/authorization/requireRegistrationHandler.js";
 
 function route() {
   const path = window.location.pathname;
@@ -25,6 +26,7 @@ function route() {
     case "/index.html":
       authLinkHandler();
       logoutHandler();
+      // requireRegistrationHandler();
       if (searchQuery) {
         displaySearchResults(); // Only display search results if there's a search query
       } else {
