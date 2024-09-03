@@ -11861,6 +11861,14 @@ textarea.form-control-lg {
   margin-bottom: 6rem;
 }
 
+.loader-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Ensure it's on top of other content */
+}
+
 .img-container {
   height: 200px; /* Adjust height as needed */
   overflow: hidden;
