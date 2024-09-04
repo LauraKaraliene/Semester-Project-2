@@ -29,5 +29,7 @@ export function renderOtherUserProfile(profile) {
   if (bioText) {
     bioText.innerText = profile.bio || "No bio available.";
   }
-  // No edit buttons for other users' profiles
+
+  // change title of the page
+  document.title = `Profile | ${profile.name} | BidNest`;
 }
