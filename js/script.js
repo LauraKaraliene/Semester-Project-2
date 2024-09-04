@@ -17,7 +17,6 @@ import { handleRestrictedLinks } from "./ui/hideElements.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   handleRestrictedLinks();
-  // Other route handling code...
 });
 
 function route() {

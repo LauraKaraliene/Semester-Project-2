@@ -1,3 +1,26 @@
 .border-primary-light {
-    border-color: rgba(115, 95, 44, 0.3); 
+  border-color: rgba(115, 95, 44, 0.3);
+}
+
+.view-more-btn,
+.bid-btn,
+.edit-btn {
+  background-color: transparent;
+  color: #735f2c;
+  border: 1px solid #735f2c;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.view-more-btn:hover,
+.bid-btn:hover {
+  transform: translateY(-2px);
+  background-color: #735f2c;
+  color: white !important;
+  box-shadow: 0 6px 12px rgba(115, 95, 44, 0.5);
+}
+
+.edit-btn:hover {
+  background-color: #735f2c;
+  color: white !important;
+  box-shadow: 0 6px 12px rgba(115, 95, 44, 0.5);
 }

@@ -490,7 +490,7 @@ export function renderSingleListing(parent, listing) {
       detailsDiv.appendChild(bidInputDiv);
 
       const bidButton = document.createElement("button");
-      bidButton.classList.add("btn", "btn-primary", "text-white", "mt-1", "w-100");
+      bidButton.classList.add("btn", "btn-primary", "bid-btn", "text-white", "mt-1", "w-100");
       bidButton.textContent = "Place Bid";
 
       bidButton.addEventListener("click", async (event) => {
@@ -519,7 +519,7 @@ export function renderSingleListing(parent, listing) {
     } else {
       const loginToBidButton = document.createElement("a");
       loginToBidButton.href = "/login/index.html";
-      loginToBidButton.classList.add("btn", "btn-primary", "text-white", "mt-3", "w-100");
+      loginToBidButton.classList.add("btn", "btn-primary", "bid-btn", "text-white", "mt-3", "w-100");
       loginToBidButton.textContent = "Login to place bid";
       detailsDiv.appendChild(loginToBidButton);
     }
