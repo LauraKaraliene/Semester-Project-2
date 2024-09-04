@@ -11880,8 +11880,36 @@ textarea.form-control-lg {
   box-shadow: 0 6px 12px rgba(115, 95, 44, 0.5);
 }
 
-.about-page-intro {
-  margin-bottom: 6rem;
+/* Set Montserrat for headings */
+h1, .h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Set Roboto for body text */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* You can also apply the fonts to specific elements */
+.navbar-brand {
+  font-family: "Montserrat", sans-serif;
+}
+
+p,
+a,
+input,
+button {
+  font-family: "Roboto", sans-serif;
 }
 
 .loader-wrapper {
@@ -11889,7 +11917,7 @@ textarea.form-control-lg {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 9999; /* Ensure it's on top of other content */
+  z-index: 9999;
 }
 
 .img-container {

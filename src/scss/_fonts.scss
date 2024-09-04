@@ -1,0 +1,26 @@
+/* Set Montserrat for headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Set Roboto for body text */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* You can also apply the fonts to specific elements */
+.navbar-brand {
+  font-family: "Montserrat", sans-serif;
+}
+
+p,
+a,
+input,
+button {
+  font-family: "Roboto", sans-serif;
+}
