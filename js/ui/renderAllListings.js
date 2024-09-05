@@ -76,7 +76,16 @@ function createListings(listing) {
 
   //add "view more" button
   const viewMoreBtn = document.createElement("a");
-  viewMoreBtn.classList.add("btn", "view-more-btn", "text-primary", "border-1", "border-primary", "mt-3", "shadow-sm");
+  viewMoreBtn.classList.add(
+    "btn",
+    "view-more-btn",
+    "text-primary",
+    "border-1",
+    "border-primary",
+    "mt-3",
+    "shadow-sm",
+    "montserrat"
+  );
   viewMoreBtn.href = `/listing/listing.html?id=${id}`;
   viewMoreBtn.textContent = "View more";
   cardBody.append(viewMoreBtn);

@@ -28,6 +28,7 @@ export function renderOtherUserProfile(profile) {
   const bioText = profileContainer.querySelector(".bio-text");
   if (bioText) {
     bioText.innerText = profile.bio || "No bio available.";
+    bioText.classList.add("text-muted");
   }
 
   // change title of the page

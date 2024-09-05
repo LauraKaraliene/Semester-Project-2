@@ -11880,7 +11880,6 @@ textarea.form-control-lg {
   box-shadow: 0 6px 12px rgba(115, 95, 44, 0.5);
 }
 
-/* Set Montserrat for headings */
 h1, .h1,
 h2,
 .h2,
@@ -11895,21 +11894,20 @@ h6,
   font-family: "Montserrat", sans-serif;
 }
 
-/* Set Roboto for body text */
-body {
-  font-family: "Roboto", sans-serif;
-}
-
-/* You can also apply the fonts to specific elements */
-.navbar-brand {
+.montserrat {
   font-family: "Montserrat", sans-serif;
+  font-weight: 500;
 }
 
+body,
 p,
 a,
-input,
-button {
+input {
   font-family: "Roboto", sans-serif;
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
 }
 
 .loader-wrapper {
@@ -11928,7 +11926,7 @@ button {
 .img-container img {
   height: 100%;
   width: 100%;
-  object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=styles.css.map */

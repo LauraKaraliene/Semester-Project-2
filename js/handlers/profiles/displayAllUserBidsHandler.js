@@ -19,7 +19,7 @@ export async function displayAllUserBidsHandler(userName = null) {
 
     // Create the "Bid History" button to toggle the dropdown
     const toggleButton = document.createElement("button");
-    toggleButton.classList.add("btn", "btn-link", "p-0", "mb-3", "fs-5");
+    toggleButton.classList.add("btn", "btn-link", "p-0", "mb-3", "fs-5", "montserrat");
     toggleButton.setAttribute("data-bs-toggle", "collapse");
     toggleButton.setAttribute("data-bs-target", "#bidsCollapse");
     toggleButton.setAttribute("aria-expanded", "false");
@@ -43,7 +43,7 @@ export async function displayAllUserBidsHandler(userName = null) {
       const listingLink = document.createElement("a");
       listingLink.href = `/listing/listing.html?id=${bid.listing?.id}`;
       listingLink.textContent = bid.listing?.title ?? "Unknown listing";
-      listingLink.classList.add("text-decoration-none");
+      listingLink.classList.add("text-decoration-none", "montserrat");
 
       bidItem.innerHTML = `
         <p><strong>Listing: </strong> </p>
