@@ -2,7 +2,6 @@ import { listingsUrl } from "../../constants/api.js";
 import { headers } from "../authorization/headers.js";
 
 export async function placeBid(listingId, bidAmount) {
-  // Correctly pass the bidAmount variable
   const bidData = { amount: bidAmount };
 
   const options = {

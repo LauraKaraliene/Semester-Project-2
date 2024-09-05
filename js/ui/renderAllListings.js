@@ -42,7 +42,7 @@ function createListings(listing) {
     cardImg.src = media[0].url;
     cardImg.alt = media[0].alt || "Listing image";
   } else {
-    cardImg.src = "images/placeholder.png"; // Path to your placeholder image
+    cardImg.src = "images/placeholder.png";
     cardImg.alt = "Placeholder image";
   }
   cardImg.classList.add("card-img-top", "img-fluid", "h-100", "w-100", "object-fit-cover");

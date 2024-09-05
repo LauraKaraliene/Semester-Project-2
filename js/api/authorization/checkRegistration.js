@@ -7,7 +7,6 @@ export function checkRegistration() {
   restrictedLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
       const token = getToken();
-      console.log("Token retrieved:", token);
 
       if (!token) {
         event.preventDefault(); // Prevent the link from being followed

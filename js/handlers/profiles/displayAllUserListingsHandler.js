@@ -2,9 +2,9 @@ import { getAllUserListings } from "../../api/profiles/getAllUserListings.js";
 import { renderAllListings } from "../../ui/renderAllListings.js";
 
 export async function displayAllUserListingsHandler(userName) {
-  console.log("Displaying listings for user:", userName); // This should now log the correct userName
+  console.log("Displaying listings for user:", userName);
 
-  const listingsContainer = "#allAuctions"; // Update to your correct container
+  const listingsContainer = "#allAuctions";
 
   try {
     const listings = await getAllUserListings(userName);

@@ -32,11 +32,11 @@ function route() {
       logoutHandler();
 
       if (searchQuery) {
-        displaySearchResults(); // Only display search results if there's a search query
+        displaySearchResults();
       } else {
-        displayAllListingsHandler(); // Otherwise, display all listings
+        displayAllListingsHandler();
       }
-      searchListingsHandler(); // Attach the search handler
+      searchListingsHandler();
       break;
     case "/listing/":
     case "/listing/listing.html":
@@ -93,5 +93,4 @@ function route() {
   }
 }
 
-// route();
 document.addEventListener("DOMContentLoaded", route);

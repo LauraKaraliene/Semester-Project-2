@@ -1,7 +1,6 @@
 import { loginUser } from "../../api/authorization/login.js";
 import { messageForUser } from "../../ui/messageForUser.js";
 import * as utils from "../../utils/storage/storage.js";
-// import { getAPIKey } from "../../api/authorization/apiKey.js";
 
 export function loginFormHandler() {
   const form = document.querySelector("#loginForm");
@@ -25,7 +24,6 @@ async function loginForm(event) {
       utils.save("token", accessToken);
       utils.save("userName", name);
       utils.save("email", email);
-      console.log(accessToken, name, email);
 
       form.reset();
       window.location.href = "/index.html";

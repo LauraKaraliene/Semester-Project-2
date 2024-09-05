@@ -8,7 +8,7 @@ export async function editListing(listingId, listingData) {
 
   const options = {
     method: "PUT",
-    headers: headers(true), // Ensure Content-Type is set to application/json
+    headers: headers(true),
     body: JSON.stringify(listingData),
   };
 

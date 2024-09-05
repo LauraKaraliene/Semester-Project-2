@@ -5,7 +5,7 @@ export async function editProfile(userName, profileData) {
   const url = `${profilesUrl}/${userName}`;
   const options = {
     method: "PUT",
-    headers: headers(true), // Pass true to ensure Content-Type is set
+    headers: headers(true),
     body: JSON.stringify(profileData),
   };
 

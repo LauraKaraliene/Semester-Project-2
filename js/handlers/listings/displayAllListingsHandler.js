@@ -7,8 +7,6 @@ export async function displayAllListingsHandler() {
     const response = await getAllListings();
     const listings = response.data;
 
-    console.log(listings);
-
     renderAllListings("#listings", listings);
   } catch (error) {
     console.log(error);

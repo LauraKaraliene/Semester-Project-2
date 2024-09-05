@@ -4,9 +4,8 @@ export function messageForUser(parent, messageType, message, duration = 3000) {
   if (container) {
     container.innerHTML = `<div class="alert alert-${messageType}">${message}</div>`;
 
-    // Automatically clear the message after the specified duration (default is 3000ms or 3 seconds)
     setTimeout(() => {
-      container.innerHTML = ""; // Clears the message after the duration
+      container.innerHTML = "";
     }, duration);
   } else {
     console.error(`No element found with the selector "${parent}"`);

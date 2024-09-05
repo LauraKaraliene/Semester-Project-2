@@ -1,7 +1,4 @@
 import { get } from "../../utils/storage/get.js";
-
-// maybe use this instead?
-// import { getToken } from "../../utils/helpers/getToken.js";
 import { apiKey } from "./apiKey.js";
 
 export function headers(hasBody = false) {
@@ -17,6 +14,5 @@ export function headers(hasBody = false) {
   if (hasBody) {
     headers.append("Content-Type", "application/json");
   }
-
   return headers;
 }

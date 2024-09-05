@@ -1,8 +1,5 @@
 import { registerUser } from "../../api/authorization/register.js";
 import { messageForUser } from "../../ui/messageForUser.js";
-// import { getAPIKey } from "../../api/authorization/apiKey.js";
-// import * as utils from "../../utils/storage/storage.js";
-// import { save } from "../../utils/storage/storage.js";
 
 export function registerFormHandler() {
   const form = document.querySelector("#registerForm");
@@ -12,14 +9,12 @@ export function registerFormHandler() {
     const avatarUrl = document.getElementById("avatarUrl").value;
     const avatarAlt = document.getElementById("avatarAlt").value;
 
-    // Validate Avatar: Alt requires URL
     if (avatarAlt && !avatarUrl) {
       alert("Avatar Alt Text requires Avatar URL to be set.");
       return;
     }
     try {
       await registerForm(event);
-      // await getAPIKey();
     } catch (error) {
       console.error("Error during registration or API key retrieval:", error);
     }
@@ -49,7 +44,6 @@ async function registerForm(event) {
 
   try {
     const registrationResponse = await registerUser(profile);
-    console.log("Registration response:", registrationResponse);
 
     messageForUser("#message", "success", "You are registered. Please login!");
     setTimeout(() => {

@@ -4,41 +4,6 @@ import { get } from "../../utils/storage/get.js";
 import { save } from "../../utils/storage/save.js";
 import { apiKeyUrl } from "../../constants/api.js";
 
-// export async function getAPIKey() {
-//   const token = get("token");
-
-//   if (!token) {
-//     console.warn("No token available, skipping API key retrieval.");
-//     return;
-//   }
-
-//   try {
-//     const response = await fetch(apiKeyUrl, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//         Authorization: `Bearer ${token}`, // Correct the template literal syntax
-//       },
-//       body: JSON.stringify({
-//         name: "Test key",
-//       }),
-//     });
-
-//     if (response.ok) {
-//       const data = await response.json();
-//       console.log("API Key retrieved: ", data.key);
-//       save("apiKey", data.key);
-//       return data.key;
-//     }
-
-//     console.error(await response.json());
-//     throw new Error("Failed to get API key");
-//   } catch (error) {
-//     console.error("Error occurred while fetching API Key:", error);
-//     throw error;
-//   }
-// }
-
 export async function getAPIKey() {
   const token = get("token");
 
@@ -61,12 +26,9 @@ export async function getAPIKey() {
 
     if (response.ok) {
       const data = await response.json();
-
-      // Access the key from the data object
       const apiKey = data?.data?.key;
 
       if (apiKey) {
-        console.log("API Key retrieved: ", apiKey);
         save("apiKey", apiKey);
         return apiKey;
       } else {
@@ -79,9 +41,7 @@ export async function getAPIKey() {
   } catch (error) {
     console.error("Error occurred while fetching API Key:", error);
   }
-
   return null;
 }
 
 getAPIKey().then((key) => console.log("Stored API Key:", key));
-// getAPIKey().then(console.log);

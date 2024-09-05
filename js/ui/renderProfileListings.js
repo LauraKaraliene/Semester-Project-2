@@ -1,6 +1,6 @@
 export function renderListings(listings) {
   const listingsContainer = document.querySelector(".profile-listings");
-  listingsContainer.innerHTML = ""; // Clear previous listings
+  listingsContainer.innerHTML = "";
 
   if (listings.length === 0) {
     listingsContainer.innerHTML = "<p>No auctions to display yet.</p>";

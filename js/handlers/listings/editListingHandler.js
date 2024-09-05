@@ -36,7 +36,7 @@ function populateForm(listing) {
   document.getElementById("listingEndsAt").value = new Date(listing.endsAt).toISOString().slice(0, -8);
 
   const mediaContainer = document.getElementById("mediaInputsContainer");
-  mediaContainer.innerHTML = ""; // Clear any existing media inputs
+  mediaContainer.innerHTML = "";
 
   listing.media.forEach((media) => {
     const mediaUrlDiv = document.createElement("div");
@@ -81,7 +81,7 @@ function populateForm(listing) {
         url: input.value.trim(),
         alt: mediaAlts[index]?.value.trim() || "Listing image",
       }))
-      .filter((item) => item.url); // Filter out empty URLs
+      .filter((item) => item.url);
 
     const listingData = {
       title: title || "Untitled Listing",
@@ -93,7 +93,6 @@ function populateForm(listing) {
     try {
       await editListing(listing.id, listingData);
       messageForUser("#messageForUser", "success", "Listing updated successfully.");
-      // Redirect to the listing page after successful update
       window.location.href = `/listing/listing.html?id=${listing.id}`;
     } catch (error) {
       console.error(error);

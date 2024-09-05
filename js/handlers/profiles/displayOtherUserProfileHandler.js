@@ -16,8 +16,6 @@ export async function displayOtherUserProfileHandler() {
 
   try {
     const profileData = await getProfile(userName);
-    console.log("Profile data retrieved:", profileData);
-
     renderOtherUserProfile(profileData.data);
 
     await displayAllUserBidsHandler(userName);

@@ -8,12 +8,9 @@ import { getUserName } from "../../utils/helpers/getUserName.js";
 
 export async function displayProfileHandler() {
   const userName = getUserName();
-  console.log("Logged-in user's name:", userName);
 
   try {
     const profileData = await getProfile(userName);
-    console.log("Profile data retrieved:", profileData);
-
     renderProfile(profileData.data);
 
     await displayAllUserBidsHandler(userName);
