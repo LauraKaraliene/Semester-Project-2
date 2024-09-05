@@ -2,7 +2,7 @@
 
 ![BidNest Screenshot](https://github.com/user-attachments/assets/d93b2434-002c-4534-aa4d-e786d1208586)
 
-**BidNest** is a fictional auction platform where users can list items, bid on auctions, and earn credits by selling items. New users receive 1000 credits upon registration, making it an engaging platform for auction enthusiasts.
+**BidNest** is a fictional auction platform where users can create listings, place bids, and earn credits by selling their items. New users are rewarded with 1000 credits upon registration, offering an exciting and interactive experience for auction enthusiasts.
 
 ## Description
 
@@ -25,9 +25,10 @@ To develop an auction site where users can create listings, bid on items, and br
 
 The project connects to the **Noroff API**, specifically the **Auction Endpoints**, enabling:
 
+- **Authorization**: Users can login and logout.
 - **Create Listings**: Users can add items for auction.
 - **Place Bids**: Registered users can bid on listed items.
-- **Retrieve Data**: The platform fetches user details, auction listings, and bid data.
+- **Retrieve Data**: The platform fetches user profile details, auction listings data, and bid data.
 
 ## Built With
 
