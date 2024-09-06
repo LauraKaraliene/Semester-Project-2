@@ -19,66 +19,13 @@ export function renderSingleListing(parent, listing) {
   const highestBid = bids.reduce((max, bid) => (bid.amount > max ? bid.amount : max), 0);
   const currentUser = getUserName();
 
-  // Main container
+  // Main container with responsive order classes
   const wrapperDiv = document.createElement("div");
-  wrapperDiv.classList.add("d-flex", "col-md-10", "mx-auto", "gap-5");
+  wrapperDiv.classList.add("row", "col-md-10", "col-12", "mx-auto", "gap-5", "py-4");
 
-  // Image section
-  const imageDiv = document.createElement("div");
-  imageDiv.classList.add("col-md-5");
-
-  let mainImg = null;
-
-  if (media && media.length > 0) {
-    // Create a wrapper for the main image
-    const mainImgWrapper = document.createElement("div");
-    mainImgWrapper.classList.add("main-img-wrapper", "mb-2");
-
-    mainImg = document.createElement("img");
-    mainImg.src = media[0].url;
-    mainImg.alt = media[0].alt || "Listing image";
-    mainImg.classList.add("img-fluid", "rounded", "shadow-sm");
-
-    mainImgWrapper.appendChild(mainImg);
-    imageDiv.appendChild(mainImgWrapper);
-
-    const smallerImagesDiv = document.createElement("div");
-    smallerImagesDiv.classList.add("d-flex", "gap-2", "flex-wrap");
-
-    media.forEach((item, index) => {
-      const imgWrapper = document.createElement("div");
-      imgWrapper.style.width = "32%";
-      imgWrapper.classList.add("cursor-pointer");
-
-      const img = document.createElement("img");
-      img.src = item.url;
-      img.alt = item.alt || "Listing image";
-      img.classList.add("img-fluid", "rounded", "shadow-sm", "cursor-pointer");
-      img.style.objectFit = "cover";
-      img.style.width = "100%";
-      img.style.height = "100px";
-
-      imgWrapper.addEventListener("click", () => {
-        mainImg.src = item.url;
-        mainImg.alt = item.alt || "Listing image";
-      });
-
-      imgWrapper.appendChild(img);
-      smallerImagesDiv.appendChild(imgWrapper);
-    });
-
-    imageDiv.appendChild(smallerImagesDiv);
-  } else {
-    const img = document.createElement("img");
-    img.src = "../images/placeholder.png";
-    img.alt = "Placeholder image";
-    img.classList.add("img-fluid", "rounded", "shadow-sm");
-    imageDiv.appendChild(img);
-  }
-
-  // Details section
+  // Details section with order-first on small screens (order-md-2 to move it back)
   const detailsDiv = document.createElement("div");
-  detailsDiv.classList.add("col-md-5", "d-flex", "flex-column");
+  detailsDiv.classList.add("col-md-5", "d-flex", "flex-column", "order-1", "order-md-2");
 
   const titleElement = document.createElement("h1");
   titleElement.classList.add("fw-bold", "mb-3");
@@ -269,6 +216,59 @@ export function renderSingleListing(parent, listing) {
       loginToBidButton.textContent = "Login to place bid";
       detailsDiv.appendChild(loginToBidButton);
     }
+  }
+
+  // Image section with order-last on small screens (order-md-1 to move it back on larger screens)
+  const imageDiv = document.createElement("div");
+  imageDiv.classList.add("col-md-5", "order-2", "order-md-1");
+
+  let mainImg = null;
+
+  if (media && media.length > 0) {
+    // Create a wrapper for the main image
+    const mainImgWrapper = document.createElement("div");
+    mainImgWrapper.classList.add("main-img-wrapper", "mb-2");
+
+    mainImg = document.createElement("img");
+    mainImg.src = media[0].url;
+    mainImg.alt = media[0].alt || "Listing image";
+    mainImg.classList.add("img-fluid", "rounded", "shadow-sm");
+
+    mainImgWrapper.appendChild(mainImg);
+    imageDiv.appendChild(mainImgWrapper);
+
+    const smallerImagesDiv = document.createElement("div");
+    smallerImagesDiv.classList.add("d-flex", "gap-2", "flex-nowrap");
+
+    media.forEach((item, index) => {
+      const imgWrapper = document.createElement("div");
+      imgWrapper.style.width = "32%";
+      imgWrapper.classList.add("cursor-pointer");
+
+      const img = document.createElement("img");
+      img.src = item.url;
+      img.alt = item.alt || "Listing image";
+      img.classList.add("img-fluid", "rounded", "shadow-sm", "cursor-pointer");
+      img.style.objectFit = "cover";
+      img.style.width = "100%";
+      img.style.height = "100px";
+
+      imgWrapper.addEventListener("click", () => {
+        mainImg.src = item.url;
+        mainImg.alt = item.alt || "Listing image";
+      });
+
+      imgWrapper.appendChild(img);
+      smallerImagesDiv.appendChild(imgWrapper);
+    });
+
+    imageDiv.appendChild(smallerImagesDiv);
+  } else {
+    const img = document.createElement("img");
+    img.src = "../images/placeholder.png";
+    img.alt = "Placeholder image";
+    img.classList.add("img-fluid", "rounded", "shadow-sm");
+    imageDiv.appendChild(img);
   }
 
   wrapperDiv.append(imageDiv, detailsDiv);

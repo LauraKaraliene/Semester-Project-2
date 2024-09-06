@@ -30,6 +30,5 @@ export function renderProfile(profile) {
     bioText.innerText = profile.bio || "No bio available.";
   }
 
-  // change title of the page
   document.title = `Profile | ${profile.name} | BidNest`;
 }

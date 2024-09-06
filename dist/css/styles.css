@@ -11871,6 +11871,41 @@ textarea.form-control-lg {
   box-shadow: 0 6px 12px rgba(115, 95, 44, 0.5);
 }
 
+.scroll-to-top {
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  font-size: 30px;
+  font-weight: bold;
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  background-color: #ffffff;
+  color: #735f2c;
+  border: 2px solid #735f2c;
+  padding: 0px 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+.scroll-to-top.show {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  background-color: #735f2c;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+    right: 3px;
+  }
+}
 h1, .h1,
 h2,
 .h2,
@@ -11918,6 +11953,19 @@ button {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .profile-img {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -4,7 +4,7 @@ export function renderAllListings(parent, listings) {
   const container = document.querySelector(parent);
   const loader = document.querySelector(".loader");
 
-  console.log(listings);
+  // console.log(listings);
 
   container.innerHTML = "";
 
@@ -28,7 +28,8 @@ function createListings(listing) {
 
   //card container
   const cardDiv = document.createElement("div");
-  cardDiv.classList.add("col-md-3", "mb-4");
+  // cardDiv.classList.add("col-md-3", "mb-4");
+  cardDiv.classList.add("col-lg-3", "col-md-4", "col-sm-6", "col-12", "mb-4");
 
   const card = document.createElement("div");
   card.classList.add("card", "border-1", "border-primary", "h-100", "d-flex", "flex-column");

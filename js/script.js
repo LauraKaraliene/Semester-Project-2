@@ -14,6 +14,7 @@ import { deleteListingHandler } from "./handlers/listings/deleteListingHandler.j
 import { placeBidHandler } from "./handlers/listings/placeBidHandler.js";
 import { displayOtherUserProfileHandler } from "./handlers/profiles/displayOtherUserProfileHandler.js";
 import { handleRestrictedLinks } from "./ui/hideElements.js";
+import { handleScrollButton } from "./handlers/listings/handleScrollButton.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   handleRestrictedLinks();
@@ -37,6 +38,7 @@ function route() {
         displayAllListingsHandler();
       }
       searchListingsHandler();
+      handleScrollButton();
       break;
     case "/listing/":
     case "/listing/listing.html":

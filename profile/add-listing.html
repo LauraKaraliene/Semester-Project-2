@@ -27,7 +27,7 @@
         <div>
           <ul class="nav justify-content-end align-items-center">
             <li class="nav-item" id="authLink">
-              <a class="nav-link text-dark montserrat" href="#" id="authAction">Login</a>
+              <a class="nav-link text-dark montserrat" href="#" id="authAction">Logout</a>
             </li>
             <a href="/profile/" class="border-0 me-3">
               <img src="../images/user.png" alt="Profile" height="30" width="30" class="rounded-circle" />
@@ -113,74 +113,79 @@
         </div>
       </div>
     </div>
-    <main class="col-md-3 mx-auto my-5">
-      <h1 class="mb-3 text-center fs-2">Add New Listing</h1>
-      <form class="mx-auto d-flex flex-column" id="newListingForm">
-        <div id="messageForUser" class="mt-3 mb-2 text-center"></div>
-        <fieldset>
-          <!-- Title Input -->
-          <div class="w-100 mb-3">
-            <input
-              required
-              type="text"
-              name="title"
-              class="form-control border-1 border-primary form-input"
-              id="listingTitle"
-              placeholder="Listing Title"
-            />
-          </div>
-          <!-- Description Input -->
-          <div class="w-100 mb-3">
-            <textarea
-              type="text"
-              name="description"
-              class="form-control border-1 border-primary form-input"
-              id="listingDescription"
-              placeholder="Description"
-              rows="3"
-            ></textarea>
-          </div>
-          <!-- Media URL Inputs -->
-          <div id="mediaInputsContainer">
-            <div class="w-100 mb-3">
-              <input
-                type="url"
-                name="media-url"
-                class="form-control border-1 border-primary form-input"
-                id="listingMediaUrl"
-                placeholder="Media URL"
-              />
-            </div>
-            <div class="w-100 mb-3">
-              <input
-                maxlength="120"
-                type="text"
-                name="media-alt"
-                class="form-control border-1 border-primary form-input"
-                id="listingMediaAlt"
-                placeholder="Media Alt Text"
-              />
-            </div>
-          </div>
-          <!-- Add More Images Button -->
-          <button type="button" id="addImageField" class="btn btn-secondary mb-3">Add More Images</button>
-          <!-- Ends At Input -->
-          <div class="w-100 mb-3">
-            <input
-              required
-              type="datetime-local"
-              name="ends-at"
-              class="form-control border-1 border-primary form-input"
-              id="listingEndsAt"
-              placeholder="Ends At"
-            />
-          </div>
-          <!-- Submit Button -->
-          <div class="d-grid gap-2 col-6 mx-auto w-100">
-            <button type="submit" class="btn btn-primary mb-3 mt-2 montserrat">Add Listing</button>
-          </div>
-        </fieldset>
-      </form>
+
+    <main class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-4 col-md-6">
+          <h1 class="mb-3 text-center fs-2">Add New Listing</h1>
+          <form class="d-flex flex-column" id="newListingForm">
+            <div id="messageForUser" class="mt-3 mb-2 text-center"></div>
+            <fieldset>
+              <!-- Title Input -->
+              <div class="mb-3">
+                <input
+                  required
+                  type="text"
+                  name="title"
+                  class="form-control border-1 border-primary form-input"
+                  id="listingTitle"
+                  placeholder="Listing Title"
+                />
+              </div>
+              <!-- Description Input -->
+              <div class="mb-3">
+                <textarea
+                  type="text"
+                  name="description"
+                  class="form-control border-1 border-primary form-input"
+                  id="listingDescription"
+                  placeholder="Description"
+                  rows="3"
+                ></textarea>
+              </div>
+              <!-- Media URL Inputs -->
+              <div id="mediaInputsContainer">
+                <div class="mb-3">
+                  <input
+                    type="url"
+                    name="media-url"
+                    class="form-control border-1 border-primary form-input"
+                    id="listingMediaUrl"
+                    placeholder="Media URL"
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    maxlength="120"
+                    type="text"
+                    name="media-alt"
+                    class="form-control border-1 border-primary form-input"
+                    id="listingMediaAlt"
+                    placeholder="Media Alt Text"
+                  />
+                </div>
+              </div>
+              <!-- Add More Images Button -->
+              <button type="button" id="addImageField" class="btn btn-secondary mb-3">Add More Images</button>
+              <!-- Ends At Input -->
+              <div class="mb-3">
+                <input
+                  required
+                  type="datetime-local"
+                  name="ends-at"
+                  class="form-control border-1 border-primary form-input"
+                  id="listingEndsAt"
+                  placeholder="Ends At"
+                />
+              </div>
+              <!-- Submit Button -->
+              <div class="d-grid gap-2 col-6 mx-auto w-100">
+                <button type="submit" class="btn btn-primary mb-3 mt-2 montserrat">Add Listing</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
     </main>
     <footer class="py-4 border-1 border-top border-primary sticky-footer">
       <div class="container text-center">
