@@ -2,8 +2,6 @@ import { getAllUserListings } from "../../api/profiles/getAllUserListings.js";
 import { renderAllListings } from "../../ui/renderAllListings.js";
 
 export async function displayAllUserListingsHandler(userName) {
-  console.log("Displaying listings for user:", userName);
-
   const listingsContainer = "#allAuctions";
 
   try {
@@ -13,7 +11,7 @@ export async function displayAllUserListingsHandler(userName) {
       return;
     }
 
-    renderAllListings(listingsContainer, listings);
+    renderAllListings(listingsContainer, listings, "../");
   } catch (error) {
     document.querySelector(listingsContainer).innerHTML += "<p>Failed to load listings.</p>";
     console.error("Error displaying user listings:", error);

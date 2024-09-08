@@ -12,7 +12,6 @@ export async function displaySingleListingHandler() {
     }
 
     const listing = await getSingleListing(id);
-    console.log("Fetched listing:", listing);
 
     if (listing) {
       document.title = `BidNest | ${listing.title}`;

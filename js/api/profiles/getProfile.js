@@ -3,7 +3,6 @@ import { headers } from "../authorization/headers.js";
 
 export async function getProfile(userName) {
   const url = `${profilesUrl}/${userName}`;
-  console.log("Fetching profile from URL:", url);
 
   const options = {
     headers: headers(),

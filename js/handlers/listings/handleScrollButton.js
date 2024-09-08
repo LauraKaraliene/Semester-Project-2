@@ -2,7 +2,6 @@ export function handleScrollButton() {
   const scrollTopButton = document.getElementById("scrollTopButton");
 
   if (scrollTopButton) {
-    console.log("Scroll to Top button found");
     window.addEventListener("scroll", function () {
       if (document.documentElement.scrollTop > 300) {
         scrollTopButton.classList.add("show");
