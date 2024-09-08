@@ -13,7 +13,7 @@ export async function displayAllUserWinsHandler(userName) {
       return;
     }
 
-    renderAllListings(winsContainer, wins);
+    renderAllListings(winsContainer, wins, "../listing/");
   } catch (error) {
     document.querySelector(winsContainer).innerHTML = "<p>Failed to load wins.</p>";
     console.error("Error displaying user wins:", error);

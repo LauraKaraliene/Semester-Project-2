@@ -1,11 +1,24 @@
 import { startCountdown } from "./startCountdown.js";
 
-export function renderAllListings(parent, listings, basePath = "") {
+function determineBasePath() {
+  const currentPath = window.location.pathname;
+
+  if (currentPath.includes("/profile/")) {
+    return "../";
+  } else if (currentPath.includes("/listing/")) {
+    return "";
+  } else {
+    return "";
+  }
+}
+
+export function renderAllListings(parent, listings) {
   const container = document.querySelector(parent);
   const loader = document.querySelector(".loader");
 
   container.innerHTML = "";
 
+  const basePath = determineBasePath();
   const rowDiv = document.createElement("div");
   rowDiv.classList.add("row", "g-4");
 
@@ -20,7 +33,7 @@ export function renderAllListings(parent, listings, basePath = "") {
   }
 }
 
-function createListings(listing, basePath = "") {
+function createListings(listing, basePath) {
   const { id, title, media, _count, endsAt } = listing;
 
   const cardDiv = document.createElement("div");
@@ -37,7 +50,7 @@ function createListings(listing, basePath = "") {
     cardImg.src = media[0].url;
     cardImg.alt = media[0].alt || "Listing image";
   } else {
-    cardImg.src = `${basePath}images/placeholder.png`;
+    cardImg.src = `${basePath}images/placeholder.png`; // Use dynamic basePath here
     cardImg.alt = "Placeholder image";
   }
   cardImg.classList.add("card-img-top", "img-fluid", "h-100", "w-100", "object-fit-cover");
