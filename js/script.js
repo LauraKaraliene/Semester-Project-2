@@ -35,7 +35,7 @@ function route() {
       if (searchQuery) {
         displaySearchResults();
       } else {
-        displayAllListingsHandler();
+        displayAllListingsHandler("");
       }
       searchListingsHandler();
       handleScrollButton();
